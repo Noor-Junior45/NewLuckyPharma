@@ -1,0 +1,137 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {
+      colors: {
+        medical: {
+          50: '#f0fdf4',
+          100: '#dcfce7',
+          200: '#bbf7d0',
+          300: '#86efac',
+          400: '#4ade80',
+          500: '#22c55e',
+          600: '#16a34a',
+          700: '#15803d',
+          800: '#166534',
+          900: '#14532d',
+        }
+      },
+      animation: {
+        'float': 'float 6s ease-in-out infinite',
+        'gradient-x': 'gradient-x 15s ease infinite',
+        'shine': 'shine 3s infinite',
+        'heartbeat': 'heartbeat 1.5s ease-in-out 1',
+        'heartbeat-red': 'heartbeatRed 0.5s ease-in-out 1',
+        'popup-in': 'popupIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        'slide-up': 'slideInUp 0.3s ease-out forwards',
+        'slide-down': 'slideDown 0.8s ease-out forwards',
+        'fade-in': 'fadeIn 1s ease-out forwards',
+        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+        'scale-up': 'scaleUp 0.5s ease-out forwards',
+        'typing': 'typing 1.4s infinite ease-in-out both',
+        'blob': 'blob 7s infinite',
+        'bounce-subtle': 'bounce-subtle 3s infinite',
+        'spring': 'spring 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+        'spin-slow': 'spin 12s linear infinite',
+        'swim': 'swim 10s linear infinite',
+        'bubble-rise': 'bubbleRise 4s infinite ease-in',
+        'wave-flow': 'wave-flow 10s infinite linear',
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        'gradient-x': {
+          '0%, 100%': {
+            'background-size': '200% 200%',
+            'background-position': 'left center'
+          },
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': 'right center'
+          },
+        },
+        shine: {
+          '0%': { left: '-75%' },
+          '100%': { left: '125%' },
+        },
+        heartbeat: {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.05)', boxShadow: '0 0 15px rgba(22, 163, 74, 0.5)' }
+        },
+        heartbeatRed: {
+          '0%, 100%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.35)' }
+        },
+        popupIn: {
+          '0%': { opacity: '0', transform: 'scale(0.9) translateY(20px)' },
+          '100%': { opacity: '1', transform: 'scale(1) translateY(0)' }
+        },
+        slideInUp: {
+          'from': { opacity: '0', transform: 'translateY(20px)' },
+          'to': { opacity: '1', transform: 'translateY(0)' }
+        },
+        slideDown: {
+          '0%': { transform: 'translateY(-100%)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' }
+        },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' }
+        },
+        fadeInUp: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' }
+        },
+        scaleUp: {
+          '0%': { transform: 'scale(0.95)', opacity: '0' },
+          '100%': { transform: 'scale(1)', opacity: '1' }
+        },
+        typing: {
+          '0%, 80%, 100%': { transform: 'scale(0)' },
+          '40%': { transform: 'scale(1)' }
+        },
+        blob: {
+            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+        },
+        'bounce-subtle': {
+          '0%, 100%': { transform: 'translateY(-5%)' },
+          '50%': { transform: 'translateY(5%)' },
+        },
+        spring: {
+            '0%': { transform: 'scale(1)' },
+            '40%': { transform: 'scale(1.4)' },
+            '70%': { transform: 'scale(0.9)' },
+            '100%': { transform: 'scale(1)' }
+        },
+        swim: {
+          '0%': { left: '-20%', transform: 'scaleX(1)' },
+          '49%': { transform: 'scaleX(1)' },
+          '50%': { left: '110%', transform: 'scaleX(-1)' },
+          '99%': { transform: 'scaleX(-1)' },
+          '100%': { left: '-20%', transform: 'scaleX(1)' }
+        },
+        bubbleRise: {
+          '0%': { transform: 'translateY(0) scale(0.5)', opacity: '0' },
+          '50%': { opacity: '0.6' },
+          '100%': { transform: 'translateY(-120px) scale(1.2)', opacity: '0' }
+        },
+        'wave-flow': {
+          '0%': { transform: 'translateX(0) translateZ(0) scaleY(1)' },
+          '50%': { transform: 'translateX(-25%) translateZ(0) scaleY(0.8)' },
+          '100%': { transform: 'translateX(-50%) translateZ(0) scaleY(1)' }
+        }
+      }
+    }
+  },
+  plugins: [],
+}

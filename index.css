@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Utilities */
+.reveal {
+    opacity: 0 !important;
+    transform: translateY(30px) !important;
+    transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1) !important;
+    visibility: hidden;
+    will-change: transform, opacity; /* GPU Acceleration */
+}
+
+.reveal-scale {
+    opacity: 0 !important;
+    transform: scale(0.9) translateY(20px) !important;
+    transition: all 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+    visibility: hidden;
+    will-change: transform, opacity; /* GPU Acceleration */
+}
+
+.reveal.active, .reveal-scale.active {
+    opacity: 1 !important;
+    transform: translateY(0) scale(1) !important;
+    visibility: visible !important;
+}
+
+.reveal-delay-100 { transition-delay: 0.1s !important; }
+.reveal-delay-200 { transition-delay: 0.2s !important; }
+.reveal-delay-300 { transition-delay: 0.3s !important; }
+.reveal-delay-400 { transition-delay: 0.4s !important; }
+
+@keyframes magicGlow {
+    0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); transform: scale(1); border-color: transparent; }
+    50% { box-shadow: 0 0 30px 10px rgba(34, 197, 94, 0.3); transform: scale(1.02); border-color: #22c55e; }
+    100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); transform: scale(1); border-color: transparent; }
+}
+
+/* Explicitly define shine keyframes */
+@keyframes shine {
+    0% { left: -75%; }
+    100% { left: 125%; }
+}
+
+.magic-focus {
+    animation: magicGlow 1.5s ease-out;
+    position: relative;
+    z-index: 10;
+    border-radius: 1rem;
+}
+
+.btn-shine {
+    position: relative;
+    overflow: hidden;
+}
+.btn-shine::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.3) 100%);
+    transform: skewX(-25deg);
+    animation: shine 3s infinite;
+}
+
+/* ENHANCED 3D HOVER LIFT */
+.hover-lift-smooth {
+    transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                box-shadow 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+                border-color 0.3s ease;
+    perspective: 1000px;
+}
+
+.hover-lift-smooth:hover, .hover-lift-smooth:active {
+    transform: translateY(-12px) scale(1.02) rotateX(2deg);
+    box-shadow: 
+        0 25px 50px -12px rgba(0, 0, 0, 0.12), 
+        0 12px 20px -8px rgba(0, 0, 0, 0.08),
+        0 0 25px 0 rgba(34, 197, 94, 0.15); /* Medical Green Glow */
+    z-index: 10;
+}
+
+/* Custom Scrollbar for Modals & Page */
+.custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(20, 184, 166, 0.5) transparent; /* Teal-500/50 */
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+    margin-block: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(20, 184, 166, 0.5); /* Teal-500/50 */
+    border-radius: 10px;
+    border: 1px solid transparent;
+    background-clip: content-box;
+    transition: background 0.2s ease;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(13, 148, 136, 0.8); /* Teal-600 */
+}
+
+/* Horizontal Scrollbar Hide (Amazon Style Nav) */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Water Animation */
+@keyframes rise {
+    0% { bottom: -10px; transform: translateX(0); opacity: 0; }
+    50% { opacity: 1; }
+    100% { bottom: 120%; transform: translateX(-20px); opacity: 0; }
+}
+.animate-rise {
+    animation: rise 4s infinite ease-in;
+}
+
+@keyframes wave-flow {
+    0% { transform: translateX(0) translateZ(0) scaleY(1); }
+    50% { transform: translateX(-25%) translateZ(0) scaleY(0.8); }
+    100% { transform: translateX(-50%) translateZ(0) scaleY(1); }
+}
+.animate-wave {
+    animation: wave-flow 10s infinite linear;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-top: 2px solid rgba(255, 255, 255, 0.9); /* Specular highlight */
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
