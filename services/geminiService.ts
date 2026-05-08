@@ -2,7 +2,7 @@ import { GoogleGenAI, Type, Tool, Modality } from "@google/genai";
 import { Product } from "../types";
 import { productList } from "../data/products";
 
-// Initialize safely - relies on Vite's define plugin to replace process.env.API_KEY at build time
+// Initialize safely - relies on Vite's define plugin to replace process.env.GEMINI_API_KEY at build time
 const getAIClient = () => {
     const apiKey = process.env.GEMINI_API_KEY;
 
