@@ -13,6 +13,38 @@ const getAIClient = () => {
     return new GoogleGenAI({ apiKey });
 };
 
+// Helper to handle and categorize Gemini API errors
+const handleGeminiError = (error: any): string => {
+    console.error("Gemini API Error Detail:", error);
+    
+    // Check if offline
+    if (typeof navigator !== "undefined" && !navigator.onLine) {
+        return "You appear to be offline. Please check your internet connection and try again.";
+    }
+
+    const message = error?.message || String(error);
+    const status = error?.status || (error?.response?.status);
+
+    // Categorize common errors
+    if (message.includes("API_KEY_INVALID") || status === 403) {
+        return "Invalid API Key. Please check your GEMINI_API_KEY environment variable.";
+    }
+    
+    if (message.includes("quota") || message.includes("429") || status === 429) {
+        return "API rate limit reached (Quota Exceeded). Please wait a moment before trying again.";
+    }
+
+    if (message.includes("not found") || message.includes("404") || status === 404) {
+        return "The requested AI model was not found. Please verify the model name or your region's availability.";
+    }
+
+    if (message.includes("fetch failed") || message.includes("NetworkError")) {
+        return "Network error: Unable to reach the AI server. This might be due to a slow connection or firewall.";
+    }
+
+    return `An unexpected AI error occurred: ${message}`;
+};
+
 // Response Cache for suggestions and repeated queries
 const responseCache = new Map<string, { text: string, products?: Product[], groundingSources?: { title: string; url: string }[] }>();
 
@@ -89,7 +121,9 @@ export const getGeminiResponse = async (userMessage: string, imageBase64?: strin
         }
 
         const ai = getAIClient();
-        if (!ai) return { text: "AI Chatbot is currently offline. If you're the developer, please ensure 'GEMINI_API_KEY' is set in your environment variables (e.g., in Vercel settings)." };
+        if (!ai) {
+            return { text: "AI Chatbot is currently offline. If you're the developer, please ensure 'GEMINI_API_KEY' is set in your environment variables (e.g., in Vercel settings)." };
+        }
 
         let contents: any;
         
@@ -180,10 +214,7 @@ export const getGeminiResponse = async (userMessage: string, imageBase64?: strin
         return finalResult;
 
     } catch (error: any) {
-        console.error("Gemini API Error:", error);
-        // Provide more details to the user to help debug
-        const errorDetails = error?.message || "Unknown error";
-        return { text: `I'm having trouble connecting to the AI server. (Detail: ${errorDetails}). Please consult a pharmacist in person or check your API key if you're the developer.` };
+        return { text: handleGeminiError(error) };
     }
 };
 
@@ -219,7 +250,7 @@ export const translateText = async (text: string, targetLanguage: string = 'Engl
 
         return response.text || text;
     } catch (error) {
-        console.error("Translation Error:", error);
+        handleGeminiError(error);
         return text;
     }
 };
@@ -247,7 +278,7 @@ export const generateSpeech = async (text: string): Promise<string | null> => {
         const base64Audio = response.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
         return base64Audio || null;
     } catch (error) {
-        console.error("TTS Error:", error);
+        handleGeminiError(error);
         return null;
     }
 };
@@ -317,7 +348,7 @@ export const searchProducts = async (query: string): Promise<Product[]> => {
         }));
 
     } catch (error) {
-        console.error("Gemini Search Error:", error);
+        handleGeminiError(error);
         return [];
     }
 };
@@ -358,7 +389,7 @@ Output JSON array of objects with 'text' (max 4 words) and 'icon' (fontawesome s
         return suggestions;
 
     } catch (e) {
-        console.error("Personalized Suggestions Error:", e);
+        handleGeminiError(e);
         return [];
     }
 };
