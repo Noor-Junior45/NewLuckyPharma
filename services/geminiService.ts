@@ -121,7 +121,7 @@ export const getGeminiResponse = async (userMessage: string, imageBase64?: strin
         }
 
         const response = await ai.models.generateContent({
-            model: 'gemini-2.0-flash',
+            model: 'gemini-3-flash-preview',
             contents: contents,
             config: {
                 systemInstruction: SYSTEM_INSTRUCTION,
@@ -179,9 +179,11 @@ export const getGeminiResponse = async (userMessage: string, imageBase64?: strin
         responseCache.set(cacheKey, finalResult);
         return finalResult;
 
-    } catch (error) {
+    } catch (error: any) {
         console.error("Gemini API Error:", error);
-        return { text: "I'm having trouble connecting to the server. Please consult a pharmacist in person." };
+        // Provide more details to the user to help debug
+        const errorDetails = error?.message || "Unknown error";
+        return { text: `I'm having trouble connecting to the AI server. (Detail: ${errorDetails}). Please consult a pharmacist in person or check your API key if you're the developer.` };
     }
 };
 
@@ -211,7 +213,7 @@ export const translateText = async (text: string, targetLanguage: string = 'Engl
             : `Translate into ${targetLanguage}.`;
 
         const response = await ai.models.generateContent({
-            model: 'gemini-2.0-flash',
+            model: 'gemini-3-flash-preview',
             contents: `${instruction} Keep any markdown formatting like bolding (**). Text: \n\n${text}`,
         });
 
@@ -230,7 +232,7 @@ export const generateSpeech = async (text: string): Promise<string | null> => {
         const cleanSpeechText = text.replace(/\*\*/g, "").replace(/\*/g, "");
 
         const response = await ai.models.generateContent({
-            model: "gemini-2.0-flash",
+            model: "gemini-3.1-flash-tts-preview",
             contents: [{ parts: [{ text: cleanSpeechText }] }],
             config: {
                 responseModalities: [Modality.AUDIO],
@@ -256,7 +258,7 @@ export const searchProducts = async (query: string): Promise<Product[]> => {
         if (!ai) return [];
 
         const response = await ai.models.generateContent({
-            model: 'gemini-2.0-flash',
+            model: 'gemini-3-flash-preview',
             contents: `You are an expert pharmacist in India. User Query: "${query}".
             Generate a list of 4 DISTINCT, POPULAR BRAND NAME medicines available in India that match the query.
             
@@ -335,7 +337,7 @@ export const getPersonalizedSuggestions = async (history: string[]): Promise<{te
 Output JSON array of objects with 'text' (max 4 words) and 'icon' (fontawesome solid name, e.g., 'pills', 'heartbeat', 'capsules'). NO Markdown. Example: [{"text": "Headache pills", "icon": "pills"}]`;
 
         const response = await ai.models.generateContent({
-            model: "gemini-2.0-flash",
+            model: "gemini-3-flash-preview",
             contents: prompt,
             config: {
                 systemInstruction: "You suggest very short clinical/pharmaceutical terms based on history.",
