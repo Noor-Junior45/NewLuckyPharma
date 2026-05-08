@@ -396,7 +396,7 @@ const AIChat: React.FC<AIChatProps> = ({ onViewProduct }) => {
             liveAudioContextRef.current = outputCtx;
 
             const sessionPromise = ai.live.connect({
-                model: 'gemini-2.5-flash-native-audio-preview-09-2025',
+                model: 'gemini-2.0-flash',
                 callbacks: {
                     onopen: () => {
                         setLiveStatusText("Listening...");

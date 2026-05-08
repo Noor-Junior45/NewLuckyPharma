@@ -89,7 +89,7 @@ export const getGeminiResponse = async (userMessage: string, imageBase64?: strin
         }
 
         const ai = getAIClient();
-        if (!ai) return { text: "I am currently offline. Please check back later." };
+        if (!ai) return { text: "AI Chatbot is currently offline. If you're the developer, please ensure 'GEMINI_API_KEY' is set in your environment variables (e.g., in Vercel settings)." };
 
         let contents: any;
         
@@ -121,7 +121,7 @@ export const getGeminiResponse = async (userMessage: string, imageBase64?: strin
         }
 
         const response = await ai.models.generateContent({
-            model: 'gemini-3-flash-preview',
+            model: 'gemini-2.0-flash',
             contents: contents,
             config: {
                 systemInstruction: SYSTEM_INSTRUCTION,
@@ -211,7 +211,7 @@ export const translateText = async (text: string, targetLanguage: string = 'Engl
             : `Translate into ${targetLanguage}.`;
 
         const response = await ai.models.generateContent({
-            model: 'gemini-3-flash-preview',
+            model: 'gemini-2.0-flash',
             contents: `${instruction} Keep any markdown formatting like bolding (**). Text: \n\n${text}`,
         });
 
@@ -230,7 +230,7 @@ export const generateSpeech = async (text: string): Promise<string | null> => {
         const cleanSpeechText = text.replace(/\*\*/g, "").replace(/\*/g, "");
 
         const response = await ai.models.generateContent({
-            model: "gemini-2.5-flash-preview-tts",
+            model: "gemini-2.0-flash",
             contents: [{ parts: [{ text: cleanSpeechText }] }],
             config: {
                 responseModalities: [Modality.AUDIO],
@@ -256,7 +256,7 @@ export const searchProducts = async (query: string): Promise<Product[]> => {
         if (!ai) return [];
 
         const response = await ai.models.generateContent({
-            model: 'gemini-3-flash-preview',
+            model: 'gemini-2.0-flash',
             contents: `You are an expert pharmacist in India. User Query: "${query}".
             Generate a list of 4 DISTINCT, POPULAR BRAND NAME medicines available in India that match the query.
             
@@ -267,7 +267,7 @@ export const searchProducts = async (query: string): Promise<Product[]> => {
             4. REAL PRODUCTS ONLY: Use actual products found in Indian medical stores.
             5. SHOW Result according to User Query.
             6. Match first result with user queries.
-
+ 
             Provide: Category, Composition (Active Ingredients with strength), Usage, Side Effects, Precautions, and Prescription Status.`,
             config: {
                 responseMimeType: "application/json",
@@ -335,7 +335,7 @@ export const getPersonalizedSuggestions = async (history: string[]): Promise<{te
 Output JSON array of objects with 'text' (max 4 words) and 'icon' (fontawesome solid name, e.g., 'pills', 'heartbeat', 'capsules'). NO Markdown. Example: [{"text": "Headache pills", "icon": "pills"}]`;
 
         const response = await ai.models.generateContent({
-            model: "gemini-2.5-flash",
+            model: "gemini-2.0-flash",
             contents: prompt,
             config: {
                 systemInstruction: "You suggest very short clinical/pharmaceutical terms based on history.",

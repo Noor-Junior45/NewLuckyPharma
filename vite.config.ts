@@ -10,8 +10,8 @@ export default defineConfig(({ mode }) => {
     plugins: [react()],
     define: {
       // transform process.env.GEMINI_API_KEY to the actual string during build
-      // default to empty string to prevent JSON.stringify(undefined)
-      'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY || '')
+      // prioritize system environment variables over .env files
+      'process.env.GEMINI_API_KEY': JSON.stringify(process.env.GEMINI_API_KEY || env.GEMINI_API_KEY || '')
     }
   }
 })
