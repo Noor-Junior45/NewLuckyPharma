@@ -1,7 +1,3 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://newluckypharma.vercel.app" />
-</div>
-
 ## To Run Locally
 
 **Prerequisites:**  Node.js
