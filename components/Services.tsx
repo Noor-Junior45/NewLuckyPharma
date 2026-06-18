@@ -10,6 +10,8 @@ const Services: React.FC = () => {
                         <img 
                             src="https://images.unsplash.com/photo-1631549916768-4119b2e5f926?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
                             alt="Pharmacy Shelf" 
+                            loading="lazy"
+                            decoding="async"
                             className="w-full object-cover h-64 md:h-96 transform transition duration-700 group-hover:scale-110"
                         />
                     </div>

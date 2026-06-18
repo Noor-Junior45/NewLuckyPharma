@@ -693,7 +693,7 @@ const AIChat: React.FC<AIChatProps> = ({ onViewProduct }) => {
 
                                         <div className={`flex flex-col max-w-[75%] ${msg.isUser ? 'items-end' : 'items-start'}`}>
                                             <div className={`relative px-3 pt-2 pb-1.5 text-sm shadow-sm w-fit inline-block leading-[1.4] whitespace-pre-wrap ${msg.isUser ? 'bg-[#d9fdd3] rounded-lg rounded-tr-none' : 'bg-white rounded-lg rounded-tl-none'}`}>
-                                                {msg.image && <img src={msg.image} className="mb-2 rounded max-w-full border border-gray-100 shadow-sm" />}
+                                                {msg.image && <img src={msg.image} alt="User prescription scan or medicine bottle upload" className="mb-2 rounded max-w-full border border-gray-100 shadow-sm" />}
                                                 <div className="inline">
                                                     {formatMessageText(msg.text)}
                                                     <span className="inline-flex items-center justify-end ml-3 align-bottom text-[9px] opacity-40 leading-none h-[11px] min-w-[45px] select-none pointer-events-none">
@@ -772,7 +772,7 @@ const AIChat: React.FC<AIChatProps> = ({ onViewProduct }) => {
 
                         {selectedImage && (
                             <div className="mb-2 flex items-center gap-3 animate-popup-in bg-white p-2 rounded-xl shadow-sm border border-gray-100">
-                                <img src={selectedImage} className="w-12 h-12 rounded-lg object-cover border border-gray-50 shadow-inner" />
+                                <img src={selectedImage} alt="User prescription scan or medicine bottle upload preview" className="w-12 h-12 rounded-lg object-cover border border-gray-50 shadow-inner" />
                                 <div className="flex-1">
                                     <p className="text-[10px] font-bold text-gray-500">Image attached</p>
                                     <button onClick={() => setSelectedImage(null)} className="text-red-500 text-[10px] font-bold hover:underline">Remove</button>
@@ -789,7 +789,7 @@ const AIChat: React.FC<AIChatProps> = ({ onViewProduct }) => {
                                 <div className="p-2">
                                     <div className="relative mb-2">
                                         <i className="fas fa-search absolute left-2.5 top-1/2 -translate-y-1/2 text-gray-400 text-[10px]"></i>
-                                        <input type="text" placeholder="Search language..." value={searchLang} onChange={(e) => setSearchLang(e.target.value)} className="w-full text-[11px] py-2 pl-8 pr-2 bg-gray-50 border-none rounded-lg focus:ring-1 focus:ring-medical-500 transition-all" />
+                                        <input type="text" aria-label="Search translation language" placeholder="Search language..." value={searchLang} onChange={(e) => setSearchLang(e.target.value)} className="w-full text-[11px] py-2 pl-8 pr-2 bg-gray-50 border-none rounded-lg focus:ring-1 focus:ring-medical-500 transition-all" />
                                     </div>
                                     <div className="flex flex-col gap-0.5 overflow-y-auto max-h-[180px] custom-scrollbar">
                                         {filteredLanguages.map(lang => (
@@ -815,7 +815,7 @@ const AIChat: React.FC<AIChatProps> = ({ onViewProduct }) => {
                                 <button type="button" onClick={startLiveSession} className="w-9 h-9 flex items-center justify-center text-medical-600 hover:scale-110 active:scale-95 transition-all" title="Live Talk"><i className="fas fa-microphone text-lg"></i></button>
                             </div>
                             
-                            <input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} placeholder={isLive ? "Talking..." : `Type in ${selectedLanguage}...`} className="flex-1 bg-white border-none rounded-full px-4 py-2.5 text-sm focus:ring-2 focus:ring-medical-500 shadow-inner min-w-0" disabled={isLive} />
+                            <input type="text" aria-label="Type message for AI Pharmacist" value={inputValue} onChange={(e) => setInputValue(e.target.value)} placeholder={isLive ? "Talking..." : `Type in ${selectedLanguage}...`} className="flex-1 bg-white border-none rounded-full px-4 py-2.5 text-sm focus:ring-2 focus:ring-medical-500 shadow-inner min-w-0" disabled={isLive} />
                             
                             <button type="submit" disabled={(!inputValue.trim() && !selectedImage) || isLive || isLoading} className="w-10 h-10 rounded-full bg-medical-600 text-white flex items-center justify-center shadow-lg hover:bg-medical-700 disabled:opacity-50 transition-all active:scale-90 flex-shrink-0 transform">
                                 {isLoading ? <i className="fas fa-spinner fa-spin"></i> : <i className="fas fa-paper-plane"></i>}

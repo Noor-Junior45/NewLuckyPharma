@@ -124,8 +124,12 @@ const Navbar: React.FC<NavbarProps> = ({ wishlistCount = 0, onOpenWishlist }) =>
                     <a href="#home" className="flex items-center gap-3 group">
                         <div className="relative w-10 h-10 rounded-lg overflow-hidden border border-gray-200 shadow-sm group-hover:border-medical-300 transition-all">
                              <img 
-                                src="https://lh3.googleusercontent.com/p/AF1QipP_obhC3R1CKSuEqrkc1BUICL9bMcMwif6flFzK=s1360-w1360-h1020-rw" 
+                                src="https://lh3.googleusercontent.com/p/AF1QipP_obhC3R1CKSuEqrkc1BUICL9bMcMwif6flFzK=s120-w120-h120-cc-rw" 
                                 alt="New Lucky Pharma" 
+                                width="40"
+                                height="40"
+                                loading="eager"
+                                decoding="async"
                                 className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500" 
                             />
                         </div>

@@ -306,6 +306,7 @@ const Products: React.FC<ProductsProps> = ({ wishlist, toggleWishlist }) => {
                             id="product-search-input"
                             type="text"
                             enterKeyHint="search"
+                            aria-label="Search medicines"
                             value={searchQuery}
                             onFocus={() => setIsFocused(true)}
                             onBlur={() => setTimeout(() => setIsFocused(false), 200)}

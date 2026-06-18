@@ -224,10 +224,11 @@ const Contact: React.FC = () => {
                             className="reveal block lg:col-span-1 bg-white rounded-3xl overflow-hidden hover-lift-smooth relative group h-full min-h-[300px] lg:min-h-[400px] cursor-pointer animate-fade-in-up border border-gray-200"
                         >
                             <img 
-                                src="https://images.unsplash.com/photo-1585435557343-3b092031a831?q=80&w=2070&auto=format&fit=crop" 
+                                src="https://images.unsplash.com/photo-1585435557343-3b092031a831?q=80&w=800&auto=format&fit=crop" 
                                 alt="Pharmacy Store Front" 
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                                 loading="lazy"
+                                decoding="async"
                             />
                             <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-gray-900 via-gray-900/80 to-transparent p-6">
                                 <h3 className="text-white text-xl font-medium tracking-normal" style={{ fontFamily: '"Google Sans", "Product Sans", sans-serif' }}>Our Store Front</h3>

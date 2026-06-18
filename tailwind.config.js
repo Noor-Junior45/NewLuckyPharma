@@ -37,8 +37,9 @@ export default {
         'blob': 'blob 7s infinite',
         'bounce-subtle': 'bounce-subtle 3s infinite',
         'spring': 'spring 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+        'spring-bounce': 'springBounce 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
         'spin-slow': 'spin 12s linear infinite',
-        'swim': 'swim 10s linear infinite',
+        'swim': 'swim 12s linear infinite',
         'bubble-rise': 'bubbleRise 4s infinite ease-in',
         'wave-flow': 'wave-flow 10s infinite linear',
       },
@@ -111,6 +112,12 @@ export default {
             '0%': { transform: 'scale(1)' },
             '40%': { transform: 'scale(1.4)' },
             '70%': { transform: 'scale(0.9)' },
+            '100%': { transform: 'scale(1)' }
+        },
+        springBounce: {
+            '0%': { transform: 'scale(1)' },
+            '40%': { transform: 'scale(1.25)' },
+            '60%': { transform: 'scale(0.95)' },
             '100%': { transform: 'scale(1)' }
         },
         swim: {
