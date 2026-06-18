@@ -1,7 +1,10 @@
 {
   "framework": "vite",
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/((?!assets/|sitemap\\.xml|robots\\.txt|ads\\.txt|google.*\\.html|.*\\..*$).*)",
+      "destination": "/index.html"
+    }
   ],
   "headers": [
     {
