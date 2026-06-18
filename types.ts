@@ -41,3 +41,9 @@ export interface Review {
     comment: string;
     date: string;
 }
+
+declare global {
+    interface Window {
+        gtag: (...args: any[]) => void;
+    }
+}

@@ -538,6 +538,21 @@ const AIChat: React.FC<AIChatProps> = ({ onViewProduct }) => {
         setInputValue('');
         setSelectedImage(null);
         setIsLoading(true);
+
+        // Track AI chat query in Google Analytics (Standard GA4 and custom parameters)
+        if (typeof window.gtag === 'function') {
+            window.gtag('event', 'search', {
+                search_term: userText,
+                search_type: 'ai_pharmacist_chat',
+                language: selectedLanguage
+            });
+            window.gtag('event', 'ai_chat_query', {
+                query_text: userText,
+                has_image: !!userImage,
+                chat_language: selectedLanguage
+            });
+        }
+
         const aiResponse = await getGeminiResponse(userText, userImage || undefined, selectedLanguage);
         setMessages(prev => {
             if (!isOpenRef.current) setHasUnread(true);

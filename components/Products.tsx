@@ -115,6 +115,20 @@ const Products: React.FC<ProductsProps> = ({ wishlist, toggleWishlist }) => {
             (p.category && p.category.toLowerCase().includes(lowerQuery))
         );
 
+        // Track Search in Google Analytics (Standard GA4 and custom parameters)
+        if (typeof window.gtag === 'function') {
+            window.gtag('event', 'search', {
+                search_term: query,
+                search_type: 'product_catalog',
+                results_found_locally: localResults.length > 0
+            });
+            window.gtag('event', 'product_search', {
+                search_query: query,
+                local_matches_count: localResults.length,
+                fallback_to_ai: localResults.length === 0
+            });
+        }
+
         if (localResults.length > 0) {
             setBaseResults(localResults);
             applySort(localResults, sortBy);

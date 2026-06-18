@@ -131,6 +131,15 @@ const App: React.FC = () => {
             targetElement.scrollIntoView({ behavior: 'smooth' });
             targetElement.classList.add('magic-focus');
             setTimeout(() => targetElement.classList.remove('magic-focus'), 1500);
+
+            // Log Section View in Google Analytics as a virtual page view
+            if (typeof window.gtag === 'function') {
+              const sectionName = href.substring(1);
+              window.gtag('event', 'page_view', {
+                page_path: `/${sectionName}`,
+                page_title: `New Lucky Pharma - ${sectionName.charAt(0).toUpperCase() + sectionName.slice(1)}`
+              });
+            }
           }
         }
       }
