@@ -1,0 +1,9 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Host
+Host: https://newluckypharma.com
+
+# Sitemaps
+Sitemap: https://newluckypharma.com/sitemap.xml
