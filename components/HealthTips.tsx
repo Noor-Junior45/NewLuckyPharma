@@ -53,7 +53,7 @@ const HealthTips: React.FC = () => {
                     muted 
                     loop 
                     playsInline
-                    poster="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=2070&auto=format&fit=crop"
+                    poster="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=75&w=800&auto=format&fit=crop"
                     onCanPlay={() => setVideoLoaded(true)}
                     onError={() => setVideoError(true)}
                 >
@@ -66,7 +66,7 @@ const HealthTips: React.FC = () => {
             {/* Fallback Background if video fails or is loading */}
             <div 
                 className={`absolute inset-0 bg-cover bg-center z-0 transition-opacity duration-1000 ${videoLoaded && !videoError ? 'opacity-0' : 'opacity-100'}`}
-                style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=2070&auto=format&fit=crop")' }}
+                style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=75&w=800&auto=format&fit=crop")' }}
             ></div>
 
             {/* White Overlay to ensure text readability over the video */}

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Product } from '../types';
 import { ProductCardImage } from './ProductCardImage';
 import { productList } from '../data/products';
@@ -23,6 +23,50 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
     
     const [isAnimating, setIsAnimating] = useState(false);
     const [similarProducts, setSimilarProducts] = useState<Product[]>([]);
+
+    // Swipe-down to dismiss gesture for Mobile
+    const touchStartRef = useRef<number | null>(null);
+    const [translateY, setTranslateY] = useState(0);
+    const [isDragging, setIsDragging] = useState(false);
+
+    const handleTouchStart = (e: React.TouchEvent) => {
+        // Disable gesture if on desktop screen size (width >= 640px)
+        if (window.innerWidth >= 640) return;
+
+        const scrollContainer = document.getElementById('product-detail-scroll-container');
+        if (scrollContainer && scrollContainer.scrollTop > 5) {
+            // If the user has scrolled down in the content, don't hijack scroll
+            return;
+        }
+
+        touchStartRef.current = e.touches[0].clientY;
+        setIsDragging(true);
+    };
+
+    const handleTouchMove = (e: React.TouchEvent) => {
+        if (!isDragging || touchStartRef.current === null) return;
+
+        const currentY = e.touches[0].clientY;
+        const deltaY = currentY - touchStartRef.current;
+
+        // Only allow dragging down
+        if (deltaY > 0) {
+            setTranslateY(deltaY);
+        }
+    };
+
+    const handleTouchEnd = () => {
+        if (!isDragging) return;
+        setIsDragging(false);
+
+        // If dragged down far enough, close the modal
+        if (translateY > 120) {
+            onClose();
+        } else {
+            setTranslateY(0);
+        }
+        touchStartRef.current = null;
+    };
 
     // Handle Mobile Back Button
     useEffect(() => {
@@ -99,9 +143,20 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
             ></div>
             
             {/* Modal Container */}
-            {/* Mobile: h-[75dvh] (Bottom Sheet Style) */}
-            {/* Desktop: h-[70vh] (Centered Card), sm:translate-y-12 pushes it down slightly for visual balance */}
-            <div className="relative glass-panel bg-white w-full h-[75dvh] sm:h-[70vh] sm:max-w-5xl rounded-t-[2.5rem] sm:rounded-3xl shadow-2xl overflow-hidden flex flex-col animate-slide-up sm:animate-popup-in transform transition-all sm:translate-y-12">
+            {/* Mobile: h-[88dvh] bottom sheet with swipe-down-to-dismiss gesture and helper notch */}
+            {/* Desktop: h-[85vh], centered, max-w-6xl for beautiful widescreen reading */}
+            <div 
+                className="relative glass-panel bg-white w-full h-[88dvh] sm:h-[85vh] sm:max-w-6xl lg:max-w-[1100px] xl:max-w-[1250px] rounded-t-[2.5rem] sm:rounded-3xl shadow-2xl overflow-hidden flex flex-col animate-slide-up sm:animate-popup-in transform transition-all"
+                style={{
+                    transform: translateY > 0 ? `translateY(${translateY}px)` : undefined,
+                    transition: isDragging ? 'none' : 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
+                }}
+                onTouchStart={handleTouchStart}
+                onTouchMove={handleTouchMove}
+                onTouchEnd={handleTouchEnd}
+            >
+                {/* Mobile Swipe Gesture Helper Notch */}
+                <div className="sm:hidden absolute top-2.5 left-1/2 -translate-x-1/2 w-14 h-1.5 bg-gray-300 rounded-full z-50"></div>
                 
                 {/* Fixed Header Layer for Buttons (Always on top) */}
                 <div className="absolute top-0 left-0 w-full z-50 p-4 sm:p-6 flex justify-between pointer-events-none">
@@ -133,7 +188,7 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
 
                 {/* Main Scrollable Layout Wrapper */}
                 {/* Mobile: Vertical scroll with everything. Desktop: Row with separate scroll for details */}
-                <div className="flex-1 flex flex-col md:flex-row overflow-y-auto md:overflow-hidden custom-scrollbar">
+                <div id="product-detail-scroll-container" className="flex-1 flex flex-col md:flex-row overflow-y-auto md:overflow-hidden custom-scrollbar">
                     
                     {/* Left: Image Panel - Reduced height on mobile to show more content */}
                     <div className="w-full md:w-5/12 shrink-0 bg-gradient-to-br from-blue-50 via-indigo-50/30 to-white relative flex flex-col items-center justify-center p-6 md:p-12 min-h-[250px] md:h-full gap-4">
@@ -159,7 +214,7 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                     <div className="w-full md:w-7/12 bg-white flex flex-col md:h-full md:overflow-hidden">
                         
                         {/* Scrollable Content (Desktop Only for internal scroll, Mobile scrolls parent) */}
-                        <div id="product-detail-pane" className="flex-1 p-6 md:p-8 md:overflow-y-auto custom-scrollbar">
+                        <div id="product-detail-pane" className="flex-1 p-6 sm:p-8 md:p-10 lg:p-12 md:overflow-y-auto custom-scrollbar">
                             
                             {/* Badges Row */}
                             <div className="flex flex-wrap items-center gap-2 mb-3">
@@ -177,6 +232,11 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                                         <i className="fas fa-check-circle"></i> OTC Product
                                     </span>
                                 )}
+                                {product.avgPrice && (
+                                    <span className="px-3 py-1 rounded-full bg-amber-50 text-amber-800 text-[10px] md:text-xs font-black uppercase tracking-wider border border-amber-200 flex items-center gap-1 shadow-sm">
+                                        <i className="fas fa-tag text-[9px] md:text-[11px] text-amber-600"></i> Avg Price: {product.avgPrice}
+                                    </span>
+                                )}
                             </div>
 
                             <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-3 leading-tight">{product.name}</h2>
@@ -186,7 +246,7 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                             </p>
 
                             {/* Info Grid */}
-                            <div className="grid grid-cols-1 gap-4 mb-6">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                                 {/* Composition Block */}
                                 {product.composition && (
                                     <div className="bg-teal-50/50 rounded-2xl p-4 border border-teal-100">
@@ -225,7 +285,7 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                                 )}
 
                                 {product.precautions && product.precautions.length > 0 && (
-                                    <div className="bg-red-50/50 rounded-2xl p-4 border border-red-100">
+                                    <div className="bg-red-50/50 rounded-2xl p-4 border border-red-100 md:col-span-2">
                                         <div className="flex items-center gap-3 mb-1 text-red-700 font-bold">
                                             <div className="w-7 h-7 rounded-full bg-red-100 flex items-center justify-center">
                                                 <i className="fas fa-shield-alt text-xs"></i>

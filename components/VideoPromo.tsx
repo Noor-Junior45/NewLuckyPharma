@@ -109,7 +109,7 @@ const VideoPromo: React.FC = () => {
                     muted 
                     loop 
                     playsInline
-                    poster="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2070&auto=format&fit=crop"
+                    poster="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=75&w=800&auto=format&fit=crop"
                     onCanPlay={() => setVideoLoaded(true)}
                     onError={() => setVideoError(true)}
                 >
@@ -121,7 +121,7 @@ const VideoPromo: React.FC = () => {
             {/* Fallback Image Layer (Visible until video loads OR if video fails) */}
             <div 
                 className={`absolute top-0 left-0 w-full h-full bg-cover bg-center transition-opacity duration-1000 ${videoLoaded && !videoError ? 'opacity-0' : 'opacity-50'}`}
-                style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2070&auto=format&fit=crop")' }}
+                style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=75&w=800&auto=format&fit=crop")' }}
             ></div>
 
             {/* 2. Gradient Overlay for Text Readability */}

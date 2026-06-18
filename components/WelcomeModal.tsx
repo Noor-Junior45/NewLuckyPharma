@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 declare global {
   interface Window {
@@ -9,10 +9,22 @@ declare global {
 const WelcomeModal: React.FC = () => {
     const [isVisible, setIsVisible] = useState(false);
     const [shouldRender, setShouldRender] = useState(false);
+    
+    const autoDismissTimerRef = useRef<NodeJS.Timeout | null>(null);
+    const initialTimerRef = useRef<NodeJS.Timeout | null>(null);
 
-    const showModal = () => {
+    const showModal = (autoDismiss = false) => {
+        // Clear any previous animations or render timers
         setShouldRender(true);
-        setTimeout(() => setIsVisible(true), 100);
+        setTimeout(() => {
+            setIsVisible(true);
+            if (autoDismiss) {
+                // Auto dismiss after 15 seconds if they don't interact
+                autoDismissTimerRef.current = setTimeout(() => {
+                    handleClose();
+                }, 15000);
+            }
+        }, 100);
     };
 
     useEffect(() => {
@@ -31,15 +43,35 @@ const WelcomeModal: React.FC = () => {
                 });
             }
         } else {
-            // No consent yet, show modal
-            showModal();
+            // No consent yet: Wait 60 seconds (1 minute) before showing automatically
+            initialTimerRef.current = setTimeout(() => {
+                // Double check they didn't manually give consent during the minute
+                if (!localStorage.getItem('cookie_consent')) {
+                    showModal(true); // show and enable 15s auto-dismiss
+                }
+            }, 60000);
         }
 
         // 2. Listener for Re-opening (e.g. from Footer)
-        const handleOpenEvent = () => showModal();
+        const handleOpenEvent = () => {
+            // Clear any active auto-dismiss and pending display timers
+            if (autoDismissTimerRef.current) {
+                clearTimeout(autoDismissTimerRef.current);
+                autoDismissTimerRef.current = null;
+            }
+            if (initialTimerRef.current) {
+                clearTimeout(initialTimerRef.current);
+                initialTimerRef.current = null;
+            }
+            showModal(false); // Open immediately without auto-dismiss
+        };
         window.addEventListener('openConsentModal', handleOpenEvent);
 
-        return () => window.removeEventListener('openConsentModal', handleOpenEvent);
+        return () => {
+            if (initialTimerRef.current) clearTimeout(initialTimerRef.current);
+            if (autoDismissTimerRef.current) clearTimeout(autoDismissTimerRef.current);
+            window.removeEventListener('openConsentModal', handleOpenEvent);
+        };
     }, []);
 
     const updateConsent = (granted: boolean) => {
@@ -70,6 +102,14 @@ const WelcomeModal: React.FC = () => {
     const handleClose = () => {
         setIsVisible(false);
         setTimeout(() => setShouldRender(false), 300);
+        if (autoDismissTimerRef.current) {
+            clearTimeout(autoDismissTimerRef.current);
+            autoDismissTimerRef.current = null;
+        }
+        if (initialTimerRef.current) {
+            clearTimeout(initialTimerRef.current);
+            initialTimerRef.current = null;
+        }
     };
 
     // Handle Mobile Back Button

@@ -22,6 +22,7 @@ export interface Product {
     precautions?: string[];
     isPrescriptionRequired?: boolean;
     composition?: string;
+    avgPrice?: string;
     source?: 'local' | 'ai';
 }
 

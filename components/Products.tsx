@@ -46,10 +46,13 @@ const Products: React.FC<ProductsProps> = ({ wishlist, toggleWishlist }) => {
                     const parsedCache = JSON.parse(cachedAiSearches);
                     const aiProducts: Product[] = Object.values(parsedCache).flat() as Product[];
                     const seenIds = new Set(markedData.map((p: Product) => p.id));
+                    const seenNames = new Set(markedData.map((p: Product) => p.name.trim().toLowerCase()));
                     const uniqueAiProducts: Product[] = [];
                     for (const p of aiProducts) {
-                        if (!seenIds.has(p.id)) {
+                        const nameKey = p.name.trim().toLowerCase();
+                        if (!seenIds.has(p.id) && !seenNames.has(nameKey)) {
                             seenIds.add(p.id);
+                            seenNames.add(nameKey);
                             uniqueAiProducts.push({ ...p, source: 'ai' as const });
                         }
                     }
@@ -141,30 +144,45 @@ const Products: React.FC<ProductsProps> = ({ wishlist, toggleWishlist }) => {
                 if (cachedAiSearches) {
                     const parsedCache = JSON.parse(cachedAiSearches);
                     if (parsedCache[lowerQuery]) {
-                        aiResults = parsedCache[lowerQuery];
+                        const cachedItems = parsedCache[lowerQuery] as Product[];
+                        // Map cached items to existing products by name if they are already in the loaded products list
+                        aiResults = cachedItems.map(aiProd => {
+                            const existingProduct = products.find(p => p.name.trim().toLowerCase() === aiProd.name.trim().toLowerCase());
+                            return existingProduct ? existingProduct : aiProd;
+                        });
                     }
                 }
             } catch (e) {}
 
             if (aiResults.length === 0) {
                 // AI Search if local and cache fails
-                aiResults = await searchProducts(query);
+                const freshAiResults = await searchProducts(query);
                 
-                // Save to cache
-                if (aiResults.length > 0) {
+                if (freshAiResults.length > 0) {
+                    // Map any fresh AI results to existing products by name if they are already inside the products list
+                    aiResults = freshAiResults.map(aiProd => {
+                        const existingProduct = products.find(p => p.name.trim().toLowerCase() === aiProd.name.trim().toLowerCase());
+                        return existingProduct ? existingProduct : aiProd;
+                    });
+
+                    // Save to cache
                     try {
                         const cachedAiSearches = localStorage.getItem('ai_search_cache');
                         const parsedCache = cachedAiSearches ? JSON.parse(cachedAiSearches) : {};
+                        // Save the mapped version so it contains references or matches
                         parsedCache[lowerQuery] = aiResults;
                         localStorage.setItem('ai_search_cache', JSON.stringify(parsedCache));
                         
-                        // Also append to main products list so it shows in main view later
+                        // Also append to main products list so it shows in main view later, avoiding name duplicates
                         setProducts(prev => {
                             const newProducts = [...prev];
                             const seenIds = new Set(newProducts.map((p: Product) => p.id));
+                            const seenNames = new Set(newProducts.map((p: Product) => p.name.trim().toLowerCase()));
                             aiResults.forEach(p => {
-                                if (!seenIds.has(p.id)) {
+                                const nameKey = p.name.trim().toLowerCase();
+                                if (!seenIds.has(p.id) && !seenNames.has(nameKey)) {
                                     seenIds.add(p.id);
+                                    seenNames.add(nameKey);
                                     newProducts.push({ ...p, source: 'ai' as const });
                                 }
                             });
@@ -429,9 +447,10 @@ const Products: React.FC<ProductsProps> = ({ wishlist, toggleWishlist }) => {
                                     </div>
                                     <div className="p-6 flex flex-col flex-grow bg-white relative z-10 border-t border-gray-50">
                                         <div className="mb-3">
-                                            <div className="flex items-center gap-2 mb-1.5">
+                                            <div className="flex items-center gap-2 mb-1.5 flex-wrap">
                                                 {product.category && <span className="text-[10px] font-black text-medical-600 uppercase tracking-widest">{product.category}</span>}
                                                 {product.isPrescriptionRequired && <span className="text-[8px] bg-red-50 text-red-500 px-2 py-0.5 rounded-full font-bold uppercase tracking-tighter border border-red-100">Rx Required</span>}
+                                                {product.avgPrice && <span className="text-[10px] font-bold bg-amber-50 text-amber-700 px-2 py-0.5 rounded-full border border-amber-200/50">{product.avgPrice}</span>}
                                             </div>
                                             <h3 className="font-bold text-lg text-gray-900 leading-tight group-hover:text-medical-600 transition-colors">{product.name}</h3>
                                         </div>
