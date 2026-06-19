@@ -168,7 +168,6 @@ function generateLocalInventoryFeed() {
 
         xml += `    <item>
       <g:item_id>${id}</g:item_id>
-      <g:id>${id}</g:id>
       <g:store_code>${storeCode}</g:store_code>
       <g:quantity>${quantity}</g:quantity>
       <g:availability>${availability}</g:availability>
