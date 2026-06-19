@@ -2,6 +2,27 @@ import fs from 'fs';
 import path from 'path';
 import { productList } from '../data/products';
 
+// Light-weight manual .env loader for CLI execution
+try {
+    const envPath = path.resolve(process.cwd(), '.env');
+    if (fs.existsSync(envPath)) {
+        const envContent = fs.readFileSync(envPath, 'utf8');
+        envContent.split('\n').forEach(line => {
+            const trimmed = line.trim();
+            if (trimmed && !trimmed.startsWith('#')) {
+                const parts = trimmed.split('=');
+                if (parts.length >= 2) {
+                    const key = parts[0].trim();
+                    const value = parts.slice(1).join('=').trim().replace(/^['"]|['"]$/g, '');
+                    process.env[key] = value;
+                }
+            }
+        });
+    }
+} catch (err) {
+    console.warn('Could not manually parse .env file:', err);
+}
+
 function cleanPrice(priceStr?: string): string {
     if (!priceStr) return '100.00 INR';
     // Match the first number in the string (e.g. ₹200 - ₹600 => 200)
@@ -140,12 +161,13 @@ function generateLocalInventoryFeed() {
         const id = prod.id;
         const price = cleanPrice(prod.avgPrice);
         
-        // Use process.env.GOOGLE_STORE_CODE or fallback to 'HANWARA' if not defined
-        const storeCode = process.env.GOOGLE_STORE_CODE || 'HANWARA';
+        // Use process.env.GOOGLE_STORE_CODE or fallback to '103' if not defined (matches registered Shop Code in Google Business Profile)
+        const storeCode = process.env.GOOGLE_STORE_CODE || '103';
         const quantity = 15; // Set inventory stock quantity to 15 (as requested 'quantities 10 or something')
         const availability = 'in_stock';
 
         xml += `    <item>
+      <g:item_id>${id}</g:item_id>
       <g:id>${id}</g:id>
       <g:store_code>${storeCode}</g:store_code>
       <g:quantity>${quantity}</g:quantity>

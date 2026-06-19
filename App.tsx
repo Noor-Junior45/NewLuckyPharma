@@ -28,6 +28,7 @@ const App: React.FC = () => {
   
   const [viewedProduct, setViewedProduct] = useState<Product | null>(null);
   const [isDeepLinkOpen, setIsDeepLinkOpen] = useState(false);
+  const [seoDebugActive] = useState<boolean>(true);
 
   useEffect(() => {
       try {
@@ -79,6 +80,8 @@ const App: React.FC = () => {
         return match ? `${match[0]}.00` : '100.00';
       };
 
+      const storeCode = process.env.GOOGLE_STORE_CODE || '103';
+
       const structuredData = {
         '@context': 'https://schema.org',
         '@type': 'Product',
@@ -102,6 +105,7 @@ const App: React.FC = () => {
             '@type': 'Pharmacy',
             'name': 'New Lucky Pharma',
             'telephone': '+919798881368',
+            'branchCode': storeCode,
             'address': {
               '@type': 'PostalAddress',
               'streetAddress': 'Main Road, Hanwara',
@@ -116,8 +120,30 @@ const App: React.FC = () => {
 
       script.textContent = JSON.stringify(structuredData);
       document.head.appendChild(script);
+
+      if (seoDebugActive) {
+        const schemaWithId = { ...structuredData, 'id': viewedProduct.id };
+        console.group(`%c[SEO DEBUG] Active Product: ${viewedProduct.name} (Code: ${viewedProduct.id})`, 'color: #10b981; font-weight: bold; font-size: 13px;');
+        console.log('%cProduct Information:', 'color: #3b82f6; font-weight: bold;', {
+          id: viewedProduct.id,
+          name: viewedProduct.name,
+          price: viewedProduct.avgPrice,
+          cleanPrice: parsePrice(viewedProduct.avgPrice),
+          category: viewedProduct.category,
+          storeCode: storeCode
+        });
+        console.log('%cGenerated Google JSON-LD Structured Data:', 'color: #f59e0b; font-weight: bold;');
+        console.log(JSON.stringify(schemaWithId, null, 2));
+        console.log('%cVerify local feeds matching on id vs g:item_id:', 'color: #8b5cf6;', {
+          'Feed Item ID': viewedProduct.id,
+          'Local Inventory Store Code (branchCode)': storeCode,
+          'Local Inventory Availability': 'in_stock',
+          'Local Inventory Stock Condition': 'new'
+        });
+        console.groupEnd();
+      }
     }
-  }, [viewedProduct]);
+  }, [viewedProduct, seoDebugActive]);
 
   const closeProductModal = () => {
       setViewedProduct(null);

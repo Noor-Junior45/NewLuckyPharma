@@ -11,7 +11,8 @@ export default defineConfig(({ mode }) => {
     define: {
       // transform process.env.GEMINI_API_KEY to the actual string during build
       // prioritize system environment variables over .env files
-      'process.env.GEMINI_API_KEY': JSON.stringify(process.env.GEMINI_API_KEY || env.GEMINI_API_KEY || '')
+      'process.env.GEMINI_API_KEY': JSON.stringify(process.env.GEMINI_API_KEY || env.GEMINI_API_KEY || ''),
+      'process.env.GOOGLE_STORE_CODE': JSON.stringify(process.env.GOOGLE_STORE_CODE || env.GOOGLE_STORE_CODE || '103')
     }
   }
 })
