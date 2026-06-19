@@ -125,5 +125,45 @@ function generateSitemap() {
     console.log(`Successfully generated sitemap.xml with ${productList.length} products at: ${outputPath}`);
 }
 
+function generateLocalInventoryFeed() {
+    console.log('Generating Google Merchant Local Product Inventory Feed...');
+    
+    let xml = `<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:g="http://base.google.com/ns/1.0" version="2.0">
+  <channel>
+    <title>New Lucky Pharma - Local Product Inventory</title>
+    <link>https://newluckypharma.vercel.app</link>
+    <description>Local inventory and stock details for New Lucky Pharma physical store.</description>
+`;
+
+    for (const prod of productList) {
+        const id = prod.id;
+        const price = cleanPrice(prod.avgPrice);
+        
+        // Use 'HANWARA' as the default store code (which matches their physical shop address)
+        const storeCode = 'HANWARA';
+        const quantity = 15; // Set inventory stock quantity to 15 (as requested 'quantities 10 or something')
+        const availability = 'in_stock';
+
+        xml += `    <item>
+      <g:id>${id}</g:id>
+      <g:store_code>${storeCode}</g:store_code>
+      <g:quantity>${quantity}</g:quantity>
+      <g:availability>${availability}</g:availability>
+      <g:price>${price}</g:price>
+    </item>
+`;
+    }
+
+    xml += `  </channel>
+</rss>
+`;
+
+    const outputPath = path.resolve(process.cwd(), 'public/google-local-inventory-feed.xml');
+    fs.writeFileSync(outputPath, xml, 'utf8');
+    console.log(`Successfully generated Google Merchant Local Inventory Feed with ${productList.length} items at: ${outputPath}`);
+}
+
 generateRssFeed();
 generateSitemap();
+generateLocalInventoryFeed();
