@@ -140,8 +140,8 @@ function generateLocalInventoryFeed() {
         const id = prod.id;
         const price = cleanPrice(prod.avgPrice);
         
-        // Use 'HANWARA' as the default store code (which matches their physical shop address)
-        const storeCode = 'HANWARA';
+        // Use process.env.GOOGLE_STORE_CODE or fallback to 'HANWARA' if not defined
+        const storeCode = process.env.GOOGLE_STORE_CODE || 'HANWARA';
         const quantity = 15; // Set inventory stock quantity to 15 (as requested 'quantities 10 or something')
         const availability = 'in_stock';
 
