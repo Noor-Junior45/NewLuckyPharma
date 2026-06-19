@@ -82,6 +82,11 @@ function generateRssFeed() {
       <g:condition>${condition}</g:condition>
       <g:brand>${brand}</g:brand>
       <g:google_product_category>${googleCat}</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
 `;
     }
@@ -95,4 +100,30 @@ function generateRssFeed() {
     console.log(`Successfully generated Google Merchant RSS feed with ${productList.length} products at: ${outputPath}`);
 }
 
+function generateSitemap() {
+    console.log('Generating Sitemap XML for SEO and Crawford Mapping...');
+    
+    let xml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
+  <url>
+    <loc>https://newluckypharma.vercel.app/</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+`;
+
+    for (const prod of productList) {
+        xml += `  <url><loc>https://newluckypharma.vercel.app/?product_id=${prod.id}</loc><lastmod>2026-06-18</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>\n`;
+    }
+
+    xml += `</urlset>\n`;
+
+    const outputPath = path.resolve(process.cwd(), 'public/sitemap.xml');
+    fs.writeFileSync(outputPath, xml, 'utf8');
+    console.log(`Successfully generated sitemap.xml with ${productList.length} products at: ${outputPath}`);
+}
+
 generateRssFeed();
+generateSitemap();

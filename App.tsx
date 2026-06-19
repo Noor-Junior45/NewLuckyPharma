@@ -97,7 +97,20 @@ const App: React.FC = () => {
           'price': parsePrice(viewedProduct.avgPrice),
           'priceValidUntil': '2028-12-31',
           'availability': 'https://schema.org/InStock',
-          'itemCondition': 'https://schema.org/NewCondition'
+          'itemCondition': 'https://schema.org/NewCondition',
+          'availableAtOrFrom': {
+            '@type': 'Pharmacy',
+            'name': 'New Lucky Pharma',
+            'telephone': '+919798881368',
+            'address': {
+              '@type': 'PostalAddress',
+              'streetAddress': 'Main Road, Hanwara',
+              'addressLocality': 'Godda',
+              'addressRegion': 'JH',
+              'postalCode': '814154',
+              'addressCountry': 'IN'
+            }
+          }
         }
       };
 

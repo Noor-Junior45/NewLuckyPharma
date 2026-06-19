@@ -15,6 +15,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>2</g:id>
@@ -27,6 +32,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>3</g:id>
@@ -39,6 +49,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>4</g:id>
@@ -51,6 +66,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>5</g:id>
@@ -63,6 +83,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>6</g:id>
@@ -75,6 +100,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>7</g:id>
@@ -87,6 +117,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>8</g:id>
@@ -99,6 +134,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>9</g:id>
@@ -111,6 +151,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>10</g:id>
@@ -123,6 +168,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>11</g:id>
@@ -135,6 +185,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>12</g:id>
@@ -147,6 +202,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>13</g:id>
@@ -159,6 +219,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>14</g:id>
@@ -171,6 +236,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>15</g:id>
@@ -183,6 +253,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>16</g:id>
@@ -195,6 +270,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>17</g:id>
@@ -207,6 +287,11 @@
       <g:condition>new</g:condition>
       <g:brand>Nestle</g:brand>
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items &gt; Baby &amp; Toddler Food</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>18</g:id>
@@ -219,6 +304,11 @@
       <g:condition>new</g:condition>
       <g:brand>Nestle</g:brand>
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items &gt; Baby &amp; Toddler Food</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>19</g:id>
@@ -231,6 +321,11 @@
       <g:condition>new</g:condition>
       <g:brand>Nestle</g:brand>
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items &gt; Baby &amp; Toddler Food</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>20</g:id>
@@ -243,6 +338,11 @@
       <g:condition>new</g:condition>
       <g:brand>Nestle</g:brand>
       <g:google_product_category>Food, Beverages &amp; Tobacco &gt; Food Items &gt; Baby &amp; Toddler Food</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>21</g:id>
@@ -255,6 +355,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>22</g:id>
@@ -267,6 +372,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>23</g:id>
@@ -279,6 +389,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>24</g:id>
@@ -291,6 +406,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>25</g:id>
@@ -303,6 +423,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>26</g:id>
@@ -315,6 +440,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>27</g:id>
@@ -327,6 +457,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>28</g:id>
@@ -339,6 +474,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care &gt; Fitness &amp; Nutrition</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>29</g:id>
@@ -351,6 +491,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care &gt; Fitness &amp; Nutrition</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>30</g:id>
@@ -363,6 +508,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care &gt; Fitness &amp; Nutrition</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>31</g:id>
@@ -375,6 +525,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care &gt; Fitness &amp; Nutrition</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>32</g:id>
@@ -387,6 +542,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>33</g:id>
@@ -399,6 +559,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>34</g:id>
@@ -411,6 +576,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>35</g:id>
@@ -423,6 +593,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>36</g:id>
@@ -435,6 +610,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>37</g:id>
@@ -447,6 +627,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>38</g:id>
@@ -459,6 +644,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>39</g:id>
@@ -471,6 +661,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care &gt; Fitness &amp; Nutrition</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>40</g:id>
@@ -483,6 +678,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care &gt; Fitness &amp; Nutrition</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>41</g:id>
@@ -495,6 +695,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care &gt; Fitness &amp; Nutrition</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>42</g:id>
@@ -507,6 +712,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care &gt; Fitness &amp; Nutrition</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>43</g:id>
@@ -519,6 +729,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care &gt; Fitness &amp; Nutrition</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>44</g:id>
@@ -531,6 +746,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care &gt; Oral Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>45</g:id>
@@ -543,6 +763,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>46</g:id>
@@ -555,6 +780,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>47</g:id>
@@ -567,6 +797,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>48</g:id>
@@ -579,6 +814,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>49</g:id>
@@ -591,6 +831,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>50</g:id>
@@ -603,6 +848,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>51</g:id>
@@ -615,6 +865,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>52</g:id>
@@ -627,6 +882,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>53</g:id>
@@ -639,6 +899,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>54</g:id>
@@ -651,6 +916,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Personal Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>55</g:id>
@@ -663,6 +933,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>56</g:id>
@@ -675,6 +950,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>57</g:id>
@@ -687,6 +967,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>58</g:id>
@@ -699,6 +984,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
     <item>
       <g:id>59</g:id>
@@ -711,6 +1001,11 @@
       <g:condition>new</g:condition>
       <g:brand>New Lucky Pharma</g:brand>
       <g:google_product_category>Health &amp; Beauty &gt; Health Care</g:google_product_category>
+      <g:shipping>
+        <g:country>IN</g:country>
+        <g:service>Standard Local Delivery</g:service>
+        <g:price>0.00 INR</g:price>
+      </g:shipping>
     </item>
   </channel>
 </rss>

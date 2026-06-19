@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://newluckypharma.com
+Host: https://newluckypharma.vercel.app
 
 # Sitemaps
-Sitemap: https://newluckypharma.com/sitemap.xml
+Sitemap: https://newluckypharma.vercel.app/sitemap.xml
