@@ -61,6 +61,51 @@ const App: React.FC = () => {
       }
   }, []);
 
+  // Dynamic structured data for Google Merchant crawler / SEO lookup
+  useEffect(() => {
+    const existingScript = document.getElementById('product-structured-data');
+    if (existingScript) {
+      existingScript.remove();
+    }
+
+    if (viewedProduct) {
+      const script = document.createElement('script');
+      script.id = 'product-structured-data';
+      script.type = 'application/ld+json';
+      
+      const parsePrice = (priceStr?: string): string => {
+        if (!priceStr) return '100.00';
+        const match = priceStr.replace(/,/g, '').match(/\d+/);
+        return match ? `${match[0]}.00` : '100.00';
+      };
+
+      const structuredData = {
+        '@context': 'https://schema.org',
+        '@type': 'Product',
+        'name': viewedProduct.name,
+        'image': viewedProduct.image || 'https://newluckypharma.vercel.app/images/default-product.jpg',
+        'description': viewedProduct.description || `${viewedProduct.name} is available for local purchase and delivery at New Lucky Pharma.`,
+        'category': viewedProduct.category || 'Health Care',
+        'brand': {
+          '@type': 'Brand',
+          'name': viewedProduct.category === 'Baby Food' ? 'Nestle' : 'New Lucky Pharma'
+        },
+        'offers': {
+          '@type': 'Offer',
+          'url': `https://newluckypharma.vercel.app/?product_id=${viewedProduct.id}`,
+          'priceCurrency': 'INR',
+          'price': parsePrice(viewedProduct.avgPrice),
+          'priceValidUntil': '2028-12-31',
+          'availability': 'https://schema.org/InStock',
+          'itemCondition': 'https://schema.org/NewCondition'
+        }
+      };
+
+      script.textContent = JSON.stringify(structuredData);
+      document.head.appendChild(script);
+    }
+  }, [viewedProduct]);
+
   const closeProductModal = () => {
       setViewedProduct(null);
       setIsDeepLinkOpen(false);
