@@ -254,5 +254,34 @@
   <body class="font-sans overflow-x-hidden antialiased selection:bg-teal-500 selection:text-white">
     <div id="root"></div>        
     <script type="module" src="/index.tsx"></script>
+
+    <!-- Google Merchant Center Seller Rating Badge Integration -->
+    <script id="merchantWidgetScript" src="https://www.gstatic.com/shopping/merchant/merchantwidget.js" defer></script>
+    <script>
+      (function() {
+        function initMerchantWidget() {
+          if (window.merchantwidget && typeof window.merchantwidget.start === 'function') {
+            try {
+              window.merchantwidget.start({
+                merchant_id: 5811245568,
+                position: 'BOTTOM_LEFT',
+                region: 'IN'
+              });
+            } catch (err) {
+              console.error('Error starting merchant widget:', err);
+            }
+          }
+        }
+
+        var script = document.getElementById('merchantWidgetScript');
+        if (script) {
+          script.addEventListener('load', initMerchantWidget);
+          // In case the defer script is already loaded by the time this runs:
+          if (window.merchantwidget) {
+            initMerchantWidget();
+          }
+        }
+      })();
+    </script>
   </body>
 </html>
