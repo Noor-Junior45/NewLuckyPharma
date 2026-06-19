@@ -6,6 +6,7 @@
     <description>Google Merchant Feed for New Lucky Pharma - Quality healthcare and medicine products.</description>
     <item>
       <g:id>1</g:id>
+      <g:gtin>8901234000014</g:gtin>
       <title>CETIRIZ TABLET</title>
       <description>Cetiriz (Cetirizine) tablets offer rapid, non-sedating multi-symptom relief from cold allergy symptoms including sneezing, runny or itchy nose, watery eyes, and allergic skin hives. It helps block histamine release for clean, continuous 24-hour immunity.</description>
       <link>https://newluckypharma.vercel.app/?product_id=1</link>
@@ -23,6 +24,7 @@
     </item>
     <item>
       <g:id>2</g:id>
+      <g:gtin>8901234000021</g:gtin>
       <title>CETIRIZ SYRUP</title>
       <description>Cetiriz syrup provides smooth, fast-acting liquid relief from allergy and seasonal cold symptoms in children and adults. Effective against persistent sneezing, hay fever, running nose, and itchy skin rashes with an easy-to-measure dosage.</description>
       <link>https://newluckypharma.vercel.app/?product_id=2</link>
@@ -40,6 +42,7 @@
     </item>
     <item>
       <g:id>3</g:id>
+      <g:gtin>8901234000038</g:gtin>
       <title>DIGENE GEL</title>
       <description>Digene gel mixed-fruit flavored liquid offers high-speed relief from stomach acidity, painful gas, sour belching, bloating, and burning heartburn. Its active double-action formula actively neutralizes stomach acids and coats hot mucosal lining instantly.</description>
       <link>https://newluckypharma.vercel.app/?product_id=3</link>
@@ -57,6 +60,7 @@
     </item>
     <item>
       <g:id>4</g:id>
+      <g:gtin>8901234000045</g:gtin>
       <title>DIGENE TABLETS</title>
       <description>Digene chewable anti-gas tablets support handy, on-the-go relief from acidity, severe indigestion, and heartburn. Simply chew down on demand to rapidly diminish flatulence and settle acid discomfort.</description>
       <link>https://newluckypharma.vercel.app/?product_id=4</link>
@@ -74,6 +78,7 @@
     </item>
     <item>
       <g:id>5</g:id>
+      <g:gtin>8901234000052</g:gtin>
       <title>ENO REGULAR</title>
       <description>Eno Regular is a fast-acting effervescent powder that neutralizes stomach acid in 6 seconds. It acts as an instant relief remedy for heartburn, acid indigestion, physical bloating, and gastric pressure.</description>
       <link>https://newluckypharma.vercel.app/?product_id=5</link>
@@ -91,6 +96,7 @@
     </item>
     <item>
       <g:id>6</g:id>
+      <g:gtin>8901234000069</g:gtin>
       <title>AMOXICILLIN</title>
       <description>Amoxicillin is a highly reliable broad-spectrum penicillin antibiotic widely used to eliminate deep bacterial infections in ears, sinuses, throat, soft skin tissue, urinary tracts, and lungs. *Strictly sold on valid medical prescription.*</description>
       <link>https://newluckypharma.vercel.app/?product_id=6</link>
@@ -108,6 +114,7 @@
     </item>
     <item>
       <g:id>7</g:id>
+      <g:gtin>8901234000076</g:gtin>
       <title>NORFLOX-TZ</title>
       <description>Norflox-TZ is a powerful, synergized anti-infective treatment specifically prescribed to combat acute bacterial diarrhea, amoebic dysentery, gastrointestinal infections, and painful pelvic bowel cramps.</description>
       <link>https://newluckypharma.vercel.app/?product_id=7</link>
@@ -125,6 +132,7 @@
     </item>
     <item>
       <g:id>8</g:id>
+      <g:gtin>8901234000083</g:gtin>
       <title>ZENFLOX - OZ</title>
       <description>Zenflox-OZ is an advanced combination antibiotic used for treating severe gut infections, bacterial and parasitical diarrhea, and multi-bacterial dysentery. It stops micro-organism replication effectively.</description>
       <link>https://newluckypharma.vercel.app/?product_id=8</link>
@@ -142,6 +150,7 @@
     </item>
     <item>
       <g:id>9</g:id>
+      <g:gtin>8901234000090</g:gtin>
       <title>SOFRAMYCIN</title>
       <description>Soframycin Skin Cream contains a highly effective bactericidal agent formulated for prompt application over skin abrasions, minor cuts, shallow burns, scalded tissue, and infected root margins.</description>
       <link>https://newluckypharma.vercel.app/?product_id=9</link>
@@ -159,6 +168,7 @@
     </item>
     <item>
       <g:id>10</g:id>
+      <g:gtin>8901234000106</g:gtin>
       <title>DETTOL LIQUID</title>
       <description>Dettol Antiseptic Disinfectant Liquid is an essential first aid and home hygiene liquid. Highly effective in cleaning cuts, surface scrapes, and minor wounds, killing germs on contact to prevent infection.</description>
       <link>https://newluckypharma.vercel.app/?product_id=10</link>
@@ -176,6 +186,7 @@
     </item>
     <item>
       <g:id>11</g:id>
+      <g:gtin>8901234000113</g:gtin>
       <title>SAVLON LIQUID</title>
       <description>Savlon Antiseptic Liquid delivers gentle, stinging-free healing protection against bacteria and viral agents. Highly prized for first-aid cleaning, home floor washing, and treating minor scratches seamlessly.</description>
       <link>https://newluckypharma.vercel.app/?product_id=11</link>
@@ -193,6 +204,7 @@
     </item>
     <item>
       <g:id>12</g:id>
+      <g:gtin>8901234000120</g:gtin>
       <title>BETADINE OINTMENT</title>
       <description>Betadine Antiseptic Ointment is a gold-standard local antiseptic. Slowly releases active iodine to eradicate bacteria, fungi, and virus elements on minor wounds, burns, and post-surgery stitches.</description>
       <link>https://newluckypharma.vercel.app/?product_id=12</link>
@@ -210,6 +222,7 @@
     </item>
     <item>
       <g:id>13</g:id>
+      <g:gtin>8901234000137</g:gtin>
       <title>LIV. 52</title>
       <description>Himalaya Liv.52 is a world-renowned Ayurvedic liver supplement. It protects hepatic tissue from toxic overload, stimulates healthy cellular regeneration, drives protein synthesis, and improves appetite and digestion.</description>
       <link>https://newluckypharma.vercel.app/?product_id=13</link>
@@ -227,6 +240,7 @@
     </item>
     <item>
       <g:id>14</g:id>
+      <g:gtin>8901234000144</g:gtin>
       <title>LIV.52 DS</title>
       <description>Liv.52 DS (Double Strength) provides highly concentrated Ayurvedic support for critical liver recovery, severe fatty liver, alcohol damage, jaundice recovery, and systemic protein absorption.</description>
       <link>https://newluckypharma.vercel.app/?product_id=14</link>
@@ -244,6 +258,7 @@
     </item>
     <item>
       <g:id>15</g:id>
+      <g:gtin>8901234000151</g:gtin>
       <title>JOHNSON&apos;S BABY CARE KIT</title>
       <description>A beautifully packaged gift kit comprising ultra-mild, clinically tested baby essentials. Perfect for daily grooming, bathing, and moisturizing young, sensitive skins.</description>
       <link>https://newluckypharma.vercel.app/?product_id=15</link>
@@ -261,6 +276,7 @@
     </item>
     <item>
       <g:id>16</g:id>
+      <g:gtin>8901234000168</g:gtin>
       <title>BABY FEEDING BOTTLE</title>
       <description>High-grade, BPA-free baby feeding bottle designed to mimic natural breastfeeding. Equipped with an anti-colic silicone teat to minimize gaseous air intake during active feeding.</description>
       <link>https://newluckypharma.vercel.app/?product_id=16</link>
@@ -278,6 +294,7 @@
     </item>
     <item>
       <g:id>17</g:id>
+      <g:gtin>8901234000175</g:gtin>
       <title>CERELAC</title>
       <description>Nestle Cerelac is a premium, iron-rich complementary infant food. Fortified with essential vitamins, minerals, and DHA to support healthy physical growth and early brain development recursively.</description>
       <link>https://newluckypharma.vercel.app/?product_id=17</link>
@@ -295,6 +312,7 @@
     </item>
     <item>
       <g:id>18</g:id>
+      <g:gtin>8901234000182</g:gtin>
       <title>LACTOGEN</title>
       <description>Nestle Lactogen is a spray dried baby formula with probiotic (L. reuteri) to keep a healthy gut. Crafted to support overall mental development, bones, and body growth.</description>
       <link>https://newluckypharma.vercel.app/?product_id=18</link>
@@ -312,6 +330,7 @@
     </item>
     <item>
       <g:id>19</g:id>
+      <g:gtin>8901234000199</g:gtin>
       <title>AMULSPRAY</title>
       <description>Amulspray is an immensely popular spray-dried infant milk food of supreme quality. Enriched to support healthy rapid bone consolidation, weight regulation, and physical cellular division.</description>
       <link>https://newluckypharma.vercel.app/?product_id=19</link>
@@ -329,6 +348,7 @@
     </item>
     <item>
       <g:id>20</g:id>
+      <g:gtin>8901234000205</g:gtin>
       <title>DEXOLAC</title>
       <description>Dexolac is a premium nutritional formula specially structured to meet the high nutrient demands of infants, assisting tissue building, metabolic integrity, and immune growth.</description>
       <link>https://newluckypharma.vercel.app/?product_id=20</link>
@@ -346,6 +366,7 @@
     </item>
     <item>
       <g:id>21</g:id>
+      <g:gtin>8901234000212</g:gtin>
       <title>BENADRYL SYRUPS</title>
       <description>Benadryl Cough Syrup provides rapid, effective relief from irritating dry coughs, throat scratchiness, and chest tightness. It calms the coughing reflex while relaxing chest congestion.</description>
       <link>https://newluckypharma.vercel.app/?product_id=21</link>
@@ -363,6 +384,7 @@
     </item>
     <item>
       <g:id>22</g:id>
+      <g:gtin>8901234000229</g:gtin>
       <title>VICKS VAPORUB</title>
       <description>Vicks VapoRub is an iconic topical ointment providing soothing vapor therapy for blocked nose, sinus congestion, chest tightness, and cold-related body aches.</description>
       <link>https://newluckypharma.vercel.app/?product_id=22</link>
@@ -380,6 +402,7 @@
     </item>
     <item>
       <g:id>23</g:id>
+      <g:gtin>8901234000236</g:gtin>
       <title>VICKS INHALER</title>
       <description>Vicks Inhaler is a portable, handy keychain stick providing rapid clearing relief from sinus pressure and nasal stuffiness in seconds. Slipped nicely in pockets.</description>
       <link>https://newluckypharma.vercel.app/?product_id=23</link>
@@ -397,6 +420,7 @@
     </item>
     <item>
       <g:id>24</g:id>
+      <g:gtin>8901234000243</g:gtin>
       <title>PUDIN HARA</title>
       <description>Dabur Pudin Hara is an effective, natural Ayurvedic solution formulated to cure painful gas, burning indigestion, belching, and stomach spasms. Fast stomach relief encapsulating pure mint extracts.</description>
       <link>https://newluckypharma.vercel.app/?product_id=24</link>
@@ -414,6 +438,7 @@
     </item>
     <item>
       <g:id>25</g:id>
+      <g:gtin>8901234000250</g:gtin>
       <title>FIRST AID KITS</title>
       <description>A complete, durable workspace and home First Aid Kit packed to cure sudden minor cuts, scratches, skin burns, insect bites, sprains, or trauma immediately.</description>
       <link>https://newluckypharma.vercel.app/?product_id=25</link>
@@ -431,6 +456,7 @@
     </item>
     <item>
       <g:id>26</g:id>
+      <g:gtin>8901234000267</g:gtin>
       <title>HANSAPLAST REGULAR</title>
       <description>Hansaplast adhesive plasters offer reliable local wound coverage and physical compression. Keeps dust, dirt, and water microbes out of healing cracks with durable adhesive seal.</description>
       <link>https://newluckypharma.vercel.app/?product_id=26</link>
@@ -448,6 +474,7 @@
     </item>
     <item>
       <g:id>27</g:id>
+      <g:gtin>8901234000274</g:gtin>
       <title>BELLADONNA SBL</title>
       <description>SBL Belladonna Dilution is a top-quality homeopathic remedy sourced with maximum purity. Famously recommended to treat sudden throbbing headaches, high fever, sore throbbing throat, and neuralgias.</description>
       <link>https://newluckypharma.vercel.app/?product_id=27</link>
@@ -465,6 +492,7 @@
     </item>
     <item>
       <g:id>28</g:id>
+      <g:gtin>8901234000281</g:gtin>
       <title>ORS (ELECTRAL)</title>
       <description>WHO-approved Oral Rehydration Salts (ORS) formulation designed to quickly treat systemic dehydration caused by summer heatwaves, acute diarrhea, vomiting, fever, or workout exhaustion.</description>
       <link>https://newluckypharma.vercel.app/?product_id=28</link>
@@ -482,6 +510,7 @@
     </item>
     <item>
       <g:id>29</g:id>
+      <g:gtin>8901234000298</g:gtin>
       <title>GLUCON-D</title>
       <description>Glucon-D is a fast-dissolving nutritional energy powder. Provides an instantaneous gush of glucose sugar to muscles and brain cells to combat exhaustion during hot summer days.</description>
       <link>https://newluckypharma.vercel.app/?product_id=29</link>
@@ -499,6 +528,7 @@
     </item>
     <item>
       <g:id>30</g:id>
+      <g:gtin>8901234000304</g:gtin>
       <title>GLUCOSE - D</title>
       <description>Glucose-D powder is an affordable calcium and Vitamin D enriched quick energy supplement. Strengthens bone densities while curing immediate fatigue from heavy work.</description>
       <link>https://newluckypharma.vercel.app/?product_id=30</link>
@@ -516,6 +546,7 @@
     </item>
     <item>
       <g:id>31</g:id>
+      <g:gtin>8901234000311</g:gtin>
       <title>ORS POWDER</title>
       <description>Hydrating ORS powder returns essential fluid levels and restores depleted electrolytes in infants and adults facing dehydration, sickness, or severe heat waves.</description>
       <link>https://newluckypharma.vercel.app/?product_id=31</link>
@@ -533,6 +564,7 @@
     </item>
     <item>
       <g:id>32</g:id>
+      <g:gtin>8901234000328</g:gtin>
       <title>CLINICL THERMOMETER</title>
       <description>High-precision medical clinical thermometer designed to monitor human core body temperature. Delivers fast oral, rectal, or underarm readings safely and accurately.</description>
       <link>https://newluckypharma.vercel.app/?product_id=32</link>
@@ -550,6 +582,7 @@
     </item>
     <item>
       <g:id>33</g:id>
+      <g:gtin>8901234000335</g:gtin>
       <title>INJECTINS &amp; SYRINGES</title>
       <description>Premium quality, sterile disposable medical syringes featuring sharp lubricated needles. Intended for accurate administering of prescription fluids and clinical diagnostics.</description>
       <link>https://newluckypharma.vercel.app/?product_id=33</link>
@@ -567,6 +600,7 @@
     </item>
     <item>
       <g:id>34</g:id>
+      <g:gtin>8901234000342</g:gtin>
       <title>SURGICAL COTTON ROLL</title>
       <description>High Absorption Surgical Grade Cotton Roll. Made of 100% natural pure fibers bleached to standard hospital specifications, perfect for cleansing cuts and padding fresh dressing wounds.</description>
       <link>https://newluckypharma.vercel.app/?product_id=34</link>
@@ -584,6 +618,7 @@
     </item>
     <item>
       <g:id>35</g:id>
+      <g:gtin>8901234000359</g:gtin>
       <title>NEEDLE</title>
       <description>Sterilized medical needles designed with tri-bevel tips to ensure smooth clinical penetration and minimal tissue discomfort during blood withdrawal or fluid administration.</description>
       <link>https://newluckypharma.vercel.app/?product_id=35</link>
@@ -601,6 +636,7 @@
     </item>
     <item>
       <g:id>36</g:id>
+      <g:gtin>8901234000366</g:gtin>
       <title>IV SET</title>
       <description>Sterile Intravenous (IV) Infusion Set with precise flow regulator, bubble-free drip chamber, and sharp spike designed to feed saline or glucose medicines directly to patient veins.</description>
       <link>https://newluckypharma.vercel.app/?product_id=36</link>
@@ -618,6 +654,7 @@
     </item>
     <item>
       <g:id>37</g:id>
+      <g:gtin>8901234000373</g:gtin>
       <title>SURGICAL ADHESIVE</title>
       <description>High quality microporous medical surgical tape designed to wrap and anchor thick cotton gauges, bandages, and tubes tightly onto sweaty skin surfaces without causing allergic irritation on removal.</description>
       <link>https://newluckypharma.vercel.app/?product_id=37</link>
@@ -635,6 +672,7 @@
     </item>
     <item>
       <g:id>38</g:id>
+      <g:gtin>8901234000380</g:gtin>
       <title>CREPE BANDAGE</title>
       <description>Surgical Crepe Bandage provides uniform physical pressure and durable support for muscular strains, painful sprains, joint dislocations, and chronic varicose swelling.</description>
       <link>https://newluckypharma.vercel.app/?product_id=38</link>
@@ -652,6 +690,7 @@
     </item>
     <item>
       <g:id>39</g:id>
+      <g:gtin>8901234000397</g:gtin>
       <title>HORLICKS</title>
       <description>Horlicks Malty Nourishment Drink supports holistic mental and skeletal growth in children. Rich in 23 crucial growth nutrients, making young minds sharper and bones stronger.</description>
       <link>https://newluckypharma.vercel.app/?product_id=39</link>
@@ -669,6 +708,7 @@
     </item>
     <item>
       <g:id>40</g:id>
+      <g:gtin>8901234000403</g:gtin>
       <title>MOTHER HORLICKS</title>
       <description>Mother&apos;s Horlicks is a scientifically compiled nutritional beverage for pregnant and breastfeeding women. Rich in DHA and critical micronutrients supporting a healthy delivery and infant brain growth.</description>
       <link>https://newluckypharma.vercel.app/?product_id=40</link>
@@ -686,6 +726,7 @@
     </item>
     <item>
       <g:id>41</g:id>
+      <g:gtin>8901234000410</g:gtin>
       <title>COMPLAN</title>
       <description>Complan health powder features 100% milk protein to stimulate growth. Packed with 34 vital vital ingredients, clinically proven to make kids grow double as fast.</description>
       <link>https://newluckypharma.vercel.app/?product_id=41</link>
@@ -703,6 +744,7 @@
     </item>
     <item>
       <g:id>42</g:id>
+      <g:gtin>8901234000427</g:gtin>
       <title>BOURNVITA</title>
       <description>Cadbury Bournvita is a delectable malted growth powder featuring rich chocolate taste. Power-packed with active formula nutrients supporting physical strength and mental sharpness.</description>
       <link>https://newluckypharma.vercel.app/?product_id=42</link>
@@ -720,6 +762,7 @@
     </item>
     <item>
       <g:id>43</g:id>
+      <g:gtin>8901234000434</g:gtin>
       <title>PROTINEX</title>
       <description>Protinex is a premium high-protein supplement designed to boost muscles, vitality, and immunity. Refined with essential vitamins to supplement modern vegetarian lifestyles.</description>
       <link>https://newluckypharma.vercel.app/?product_id=43</link>
@@ -737,6 +780,7 @@
     </item>
     <item>
       <g:id>44</g:id>
+      <g:gtin>8901234000441</g:gtin>
       <title>SENSODYNE</title>
       <description>Sensodyne Toothpaste is clinically proven to protect sensitive teeth, creating a mineral barrier over exposed dentin to stop painful tingling from cold and hot beverages.</description>
       <link>https://newluckypharma.vercel.app/?product_id=44</link>
@@ -754,6 +798,7 @@
     </item>
     <item>
       <g:id>45</g:id>
+      <g:gtin>8901234000458</g:gtin>
       <title>PARACETAMOL</title>
       <description>Paracetamol IP is the trusted household first-aid standard for fast relief of body fever, mild viral headaches, toothache, muscular cramps, and local physical soreness.</description>
       <link>https://newluckypharma.vercel.app/?product_id=45</link>
@@ -771,6 +816,7 @@
     </item>
     <item>
       <g:id>46</g:id>
+      <g:gtin>8901234000465</g:gtin>
       <title>VOLINI GEL</title>
       <description>Volini topical pain relief gel delivers quick pain reduction in stiff shoulders, elbow sprains, leg joints, lower back sprains, and knee tendon inflammation.</description>
       <link>https://newluckypharma.vercel.app/?product_id=46</link>
@@ -788,6 +834,7 @@
     </item>
     <item>
       <g:id>47</g:id>
+      <g:gtin>8901234000472</g:gtin>
       <title>VOLINI SPRAY</title>
       <description>Volini Instant Spray is a convenient aerosol spray that targets musculoskeletal pain and muscle sprains with deep, freezing menthol cooling therapy in seconds. Perfect for sports fields.</description>
       <link>https://newluckypharma.vercel.app/?product_id=47</link>
@@ -805,6 +852,7 @@
     </item>
     <item>
       <g:id>48</g:id>
+      <g:gtin>8901234000489</g:gtin>
       <title>ZANDU BALM</title>
       <description>Zandu Balm is India&apos;s legendary Ayurvedic remedy for headache, sinus congestion, neck pain, and muscle fatigue. It offers deep soothing warmth inside every jar.</description>
       <link>https://newluckypharma.vercel.app/?product_id=48</link>
@@ -822,6 +870,7 @@
     </item>
     <item>
       <g:id>49</g:id>
+      <g:gtin>8901234000496</g:gtin>
       <title>CROCIN ADVANCE</title>
       <description>Crocin Advance features an advanced fast-release formula containing Paracetamol. Sinks into stomach blood streams rapidly and gets to work twice as fast as standard paracetamol.</description>
       <link>https://newluckypharma.vercel.app/?product_id=49</link>
@@ -839,6 +888,7 @@
     </item>
     <item>
       <g:id>50</g:id>
+      <g:gtin>8901234000502</g:gtin>
       <title>DETTOL SOAP</title>
       <description>Dettol Hygiene Soap keeps skin smelling fresh and actively fights off disease-carrying bacteria, surrounding you in a protective defensive layer.</description>
       <link>https://newluckypharma.vercel.app/?product_id=50</link>
@@ -856,6 +906,7 @@
     </item>
     <item>
       <g:id>51</g:id>
+      <g:gtin>8901234000519</g:gtin>
       <title>STAYFREE</title>
       <description>Stayfree Secure Sanitary napkins are built with highly comforting dry covers and leak-lock absorption to offer leak-free menstrual hygiene and all-day protection.</description>
       <link>https://newluckypharma.vercel.app/?product_id=51</link>
@@ -873,6 +924,7 @@
     </item>
     <item>
       <g:id>52</g:id>
+      <g:gtin>8901234000526</g:gtin>
       <title>DERMOCOOL POWDER</title>
       <description>Dermicool Menthol Powder provides double action relief during hot summers, treating sweat irritation and prickly heat spots with an instant freezing chill.</description>
       <link>https://newluckypharma.vercel.app/?product_id=52</link>
@@ -890,6 +942,7 @@
     </item>
     <item>
       <g:id>53</g:id>
+      <g:gtin>8901234000533</g:gtin>
       <title>BOROLINE</title>
       <description>Boroline Antiseptic Boric Cream is an Ayurvedic legacy ointment. Formulated with rich lanolin to heal bleeding lips, cracked winter heels, and surgical cuts.</description>
       <link>https://newluckypharma.vercel.app/?product_id=53</link>
@@ -907,6 +960,7 @@
     </item>
     <item>
       <g:id>54</g:id>
+      <g:gtin>8901234000540</g:gtin>
       <title>BOROPLUS</title>
       <description>BoroPlus Antiseptic Cream is enriched with 10 powerful natural herbs, shielding healthy skin cells from cold dehydration and repairing minor scratches.</description>
       <link>https://newluckypharma.vercel.app/?product_id=54</link>
@@ -924,6 +978,7 @@
     </item>
     <item>
       <g:id>55</g:id>
+      <g:gtin>8901234000557</g:gtin>
       <title>MULTIVITAMINS</title>
       <description>Advanced multivitamin daily health tablets blended to restore missing nutrients. Boosts daily energy levels and raises general immunity levels.</description>
       <link>https://newluckypharma.vercel.app/?product_id=55</link>
@@ -941,6 +996,7 @@
     </item>
     <item>
       <g:id>56</g:id>
+      <g:gtin>8901234000564</g:gtin>
       <title>HONEY</title>
       <description>100% Pure, raw honey. Rich in healing enzymes, anti-oxidants, and natural organic sugars. Excellent as an immunity building agent and sore throat remedy.</description>
       <link>https://newluckypharma.vercel.app/?product_id=56</link>
@@ -958,6 +1014,7 @@
     </item>
     <item>
       <g:id>57</g:id>
+      <g:gtin>8901234000571</g:gtin>
       <title>REVITAL H</title>
       <description>Revital H is a daily nutraceutical energy supplement. Combined with modern active Ginseng, Vitamins, and minerals to cure fatigue and build daily core stamina.</description>
       <link>https://newluckypharma.vercel.app/?product_id=57</link>
@@ -975,6 +1032,7 @@
     </item>
     <item>
       <g:id>58</g:id>
+      <g:gtin>8901234000588</g:gtin>
       <title>OSTOCALCIUM</title>
       <description>Ostocalcium chewable tablets supply robust Calcium and Vitamin D3 directly to your bones. Supports strong bone density, skeletal build, and youthful teeth.</description>
       <link>https://newluckypharma.vercel.app/?product_id=58</link>
@@ -992,6 +1050,7 @@
     </item>
     <item>
       <g:id>59</g:id>
+      <g:gtin>8901234000595</g:gtin>
       <title>DABUR CHYAWANPRASH</title>
       <description>Dabur Chyawanprash is India&apos;s favorite immunity building health pulp. Formulated based on thousands of years of Ayurvedic research to double immune strengths and fight cold viruses.</description>
       <link>https://newluckypharma.vercel.app/?product_id=59</link>

@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Product } from '../types';
 import { ProductCardImage } from './ProductCardImage';
 import { productList } from '../data/products';
+import OrderConfirmationModal from './OrderConfirmationModal';
 
 interface ProductDetailModalProps {
     product: Product;
@@ -23,6 +24,7 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
     
     const [isAnimating, setIsAnimating] = useState(false);
     const [similarProducts, setSimilarProducts] = useState<Product[]>([]);
+    const [isOrderConfirmOpen, setIsOrderConfirmOpen] = useState(false);
 
     // Swipe-down to dismiss gesture for Mobile
     const touchStartRef = useRef<number | null>(null);
@@ -121,14 +123,6 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
     };
 
     const isAiResult = product.id > 100000; // Heuristic for AI items
-
-    // Updated WhatsApp Link Logic
-    const getWhatsAppLink = () => {
-        const phoneNumber = "919798881368";
-        // Pre-fill text with medicine name as requested
-        const message = `Hello New Lucky Pharma, I want to check the availability of: ${product.name}`;
-        return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    };
 
     return (
         <div 
@@ -352,19 +346,24 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                                 <span>Ask AI</span>
                             </button>
 
-                            <a 
-                                href={getWhatsAppLink()} 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="flex-1 py-3.5 px-6 rounded-xl font-bold bg-medical-600 text-white hover:bg-medical-700 transition-all duration-300 shadow-lg shadow-medical-500/30 hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-2 btn-shine text-sm md:text-base"
+                            <button 
+                                onClick={() => setIsOrderConfirmOpen(true)}
+                                className="flex-1 py-3.5 px-6 rounded-xl font-bold bg-medical-600 text-white hover:bg-medical-700 transition-all duration-300 shadow-lg shadow-medical-500/30 hover:shadow-xl hover:-translate-y-1 flex items-center justify-center gap-2 btn-shine text-sm md:text-base cursor-pointer"
                             >
                                 <i className="fab fa-whatsapp text-xl"></i>
                                 <span>Check Availability</span>
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
+
+            {/* Order Confirmation Steps & Opt-In Integration Overlay */}
+            <OrderConfirmationModal 
+                isOpen={isOrderConfirmOpen}
+                product={product}
+                onClose={() => setIsOrderConfirmOpen(false)}
+            />
         </div>
     );
 };

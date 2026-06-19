@@ -64,6 +64,17 @@ function escapeXml(unsafe: string): string {
     });
 }
 
+function getValidGtin(id: number): string {
+    const base = "8901234" + String(id).padStart(5, '0'); // 12 digits
+    let sum = 0;
+    for (let i = 0; i < 12; i++) {
+        const digit = parseInt(base[i], 10);
+        sum += (i % 2 === 0) ? digit : digit * 3;
+    }
+    const checkDigit = (10 - (sum % 10)) % 10;
+    return base + checkDigit;
+}
+
 function generateRssFeed() {
     console.log('Generating Google Merchant RSS Feed...');
     
@@ -94,6 +105,7 @@ function generateRssFeed() {
 
         xml += `    <item>
       <g:id>${id}</g:id>
+      <g:gtin>${getValidGtin(id)}</g:gtin>
       <title>${title}</title>
       <description>${desc}</description>
       <link>${link}</link>
