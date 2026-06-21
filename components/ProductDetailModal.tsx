@@ -26,6 +26,76 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
     const [similarProducts, setSimilarProducts] = useState<Product[]>([]);
     const [isOrderConfirmOpen, setIsOrderConfirmOpen] = useState(false);
 
+    // Image Gallery & Zoom States
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [zoomScale, setZoomScale] = useState(1);
+    const [imageTouchStart, setImageTouchStart] = useState<number | null>(null);
+
+    // Interactive Hover Zoom & Share States
+    const [zoomPos, setZoomPos] = useState({ x: 50, y: 50 });
+    const [isHovered, setIsHovered] = useState(false);
+    const [isSharedCopied, setIsSharedCopied] = useState(false);
+
+    const images = product.images && product.images.length > 0 ? product.images : [product.image];
+
+    const getMaxPriceVal = (priceStr?: string): number => {
+        if (!priceStr) return 100;
+        const matches = priceStr.replace(/,/g, '').match(/\d+/g);
+        if (matches && matches.length > 0) {
+            return Math.max(...matches.map(Number));
+        }
+        return 100;
+    };
+
+    const getMaxPrice = (priceStr?: string): string => {
+        return `₹${getMaxPriceVal(priceStr)}`;
+    };
+
+    const handleShare = async (e: React.MouseEvent) => {
+        e.stopPropagation();
+        const isStatic = product.id < 100000;
+        const queryParam = isStatic 
+            ? `product_id=${product.id}` 
+            : `search_query=${encodeURIComponent(product.name)}`;
+            
+        const shareUrl = `https://newluckypharma.vercel.app/?${queryParam}`;
+        const shortText = `Check out ${product.name} at New Lucky Pharma`;
+        
+        try {
+            if (navigator.share) {
+                await navigator.share({ title: product.name, text: shortText, url: shareUrl });
+            } else {
+                await navigator.clipboard.writeText(`${shortText}\n${shareUrl}`);
+                setIsSharedCopied(true);
+                setTimeout(() => setIsSharedCopied(false), 2000);
+            }
+        } catch (err) {
+            console.error('Share failed', err);
+        }
+    };
+
+    useEffect(() => {
+        setCurrentImageIndex(0);
+        setZoomScale(1);
+    }, [product]);
+
+    const handleImageTouchStart = (e: React.TouchEvent) => {
+        setImageTouchStart(e.touches[0].clientX);
+    };
+
+    const handleImageTouchEnd = (e: React.TouchEvent) => {
+        if (imageTouchStart === null) return;
+        const deltaX = e.changedTouches[0].clientX - imageTouchStart;
+        if (deltaX > 40) {
+            // Swipe Right -> previous image
+            setCurrentImageIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+        } else if (deltaX < -40) {
+            // Swipe Left -> next image
+            setCurrentImageIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+        }
+        setImageTouchStart(null);
+    };
+
     // Swipe-down to dismiss gesture for Mobile
     const touchStartRef = useRef<number | null>(null);
     const [translateY, setTranslateY] = useState(0);
@@ -154,21 +224,35 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 
                 {/* Fixed Header Layer for Buttons (Always on top) */}
                 <div className="absolute top-0 left-0 w-full z-50 p-4 sm:p-6 flex justify-between pointer-events-none">
-                    {/* Floating Wishlist Heart Button (Upper Left) */}
-                    <button 
-                        onClick={(e) => {
-                            e.stopPropagation();
-                            onToggleWishlist();
-                        }}
-                        className={`pointer-events-auto w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center shadow-lg border transition-all duration-300 ${
-                            isWishlisted 
-                            ? 'bg-red-50 text-red-500 border-red-200' 
-                            : 'bg-white/90 backdrop-blur text-gray-500 hover:text-red-500 border-gray-200 hover:bg-red-50'
-                        }`}
-                        title={isWishlisted ? "Remove from Wishlist" : "Add to Wishlist"}
-                    >
-                        <i className={`${isWishlisted ? 'fas' : 'far'} fa-heart text-xl sm:text-2xl transition-transform ${isAnimating ? 'animate-heartbeat' : ''}`}></i>
-                    </button>
+                    {/* Floating Wishlist Heart and Share Buttons Group (Upper Left) */}
+                    <div className="flex items-center gap-2.5">
+                        <button 
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                onToggleWishlist();
+                            }}
+                            className={`pointer-events-auto w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center shadow-lg border transition-all duration-300 ${
+                                isWishlisted 
+                                ? 'bg-red-50 text-red-500 border-red-200' 
+                                : 'bg-white/90 backdrop-blur text-gray-500 hover:text-red-500 border-gray-200 hover:bg-red-50'
+                            }`}
+                            title={isWishlisted ? "Remove from Wishlist" : "Add to Wishlist"}
+                        >
+                            <i className={`${isWishlisted ? 'fas' : 'far'} fa-heart text-xl sm:text-2xl transition-transform ${isAnimating ? 'animate-heartbeat' : ''}`}></i>
+                        </button>
+
+                        <button 
+                            onClick={handleShare}
+                            className={`pointer-events-auto w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center shadow-lg border transition-all duration-300 ${
+                                isSharedCopied
+                                ? 'bg-green-50 text-green-600 border-green-200' 
+                                : 'bg-white/90 backdrop-blur text-gray-500 hover:text-blue-500 border-gray-200 hover:bg-blue-50'
+                            }`}
+                            title="Share Product"
+                        >
+                            <i className={`fas ${isSharedCopied ? 'fa-check text-green-600' : 'fa-share-alt'} text-lg sm:text-xl`}></i>
+                        </button>
+                    </div>
 
                     {/* Close Button - Floating (Upper Right) */}
                     <button 
@@ -184,19 +268,131 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                 {/* Mobile: Vertical scroll with everything. Desktop: Row with separate scroll for details */}
                 <div id="product-detail-scroll-container" className="flex-1 flex flex-col md:flex-row overflow-y-auto md:overflow-hidden custom-scrollbar">
                     
-                    {/* Left: Image Panel - Reduced height on mobile to show more content */}
-                    <div className="w-full md:w-5/12 shrink-0 bg-gradient-to-br from-blue-50 via-indigo-50/30 to-white relative flex flex-col items-center justify-center p-6 md:p-12 min-h-[250px] md:h-full gap-4">
+                    {/* Left: Image Panel - Enlarged on laptops to display spacious high-res product photos */}
+                    <div className="w-full md:w-[48%] shrink-0 bg-gradient-to-br from-blue-50 via-indigo-50/30 to-white relative flex flex-col items-center justify-center p-6 md:p-10 lg:p-12 min-h-[340px] md:h-full gap-5">
                         {/* Background Blob */}
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-white rounded-full mix-blend-overlay blur-3xl opacity-50"></div>
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-white rounded-full mix-blend-overlay blur-3xl opacity-50 pointer-events-none"></div>
                         
-                        <div className="relative z-10 w-full max-w-[180px] sm:max-w-[240px] md:max-w-[260px] aspect-square drop-shadow-2xl transform transition-transform duration-500 hover:scale-105">
-                            <ProductCardImage src={product.image} alt={product.name} className="rounded-2xl" />
+                        {/* Image Gallery Viewport with ZOOM scale applied & Amazon Hover Target coordinates tracking */}
+                        <div 
+                            className="relative z-10 w-full max-w-[240px] sm:max-w-[280px] md:max-w-[420px] lg:max-w-[460px] aspect-square drop-shadow-2xl overflow-hidden rounded-3xl bg-white border border-gray-150 p-4 sm:p-6 flex items-center justify-center select-none"
+                            onTouchStart={images.length > 1 ? handleImageTouchStart : undefined}
+                            onTouchEnd={images.length > 1 ? handleImageTouchEnd : undefined}
+                            onMouseMove={(e) => {
+                                const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
+                                const x = ((e.clientX - left) / width) * 100;
+                                const y = ((e.clientY - top) / height) * 100;
+                                setZoomPos({ x, y });
+                            }}
+                            onMouseEnter={() => setIsHovered(true)}
+                            onMouseLeave={() => setIsHovered(false)}
+                            style={{ cursor: isHovered ? 'crosshair' : 'zoom-in' }}
+                        >
+                            <div 
+                                className="w-full h-full flex items-center justify-center origin-center"
+                                style={{ 
+                                    transform: isHovered ? 'scale(2.4)' : `scale(${zoomScale})`,
+                                    transformOrigin: isHovered ? `${zoomPos.x}% ${zoomPos.y}%` : 'center',
+                                    transition: isHovered ? 'none' : 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform-origin 0.3s cubic-bezier(0.16, 1, 0.3, 1)'
+                                }}
+                            >
+                                <ProductCardImage src={images[currentImageIndex]} alt={product.name} className="max-w-full max-h-full object-contain mix-blend-multiply" />
+                            </div>
+
+                            {/* Hover tooltip hint */}
+                            {!isHovered && (
+                                <div className="absolute bottom-2.5 right-2.5 bg-black/60 text-white text-[9px] font-bold px-2 py-1 rounded-md flex items-center gap-1 opacity-0 hover:opacity-100 group-hover:opacity-100 transition-opacity pointer-events-none select-none">
+                                    <i className="fas fa-search-plus"></i>
+                                    <span>Hover to zoom</span>
+                                </div>
+                            )}
+
+                            {/* Carousel Left / Right Arrows */}
+                            {images.length > 1 && (
+                                <>
+                                    <button 
+                                        type="button"
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            setCurrentImageIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+                                        }}
+                                        className="absolute left-2.5 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-700 hover:text-medical-600 w-8 h-8 rounded-full flex items-center justify-center shadow-md border border-gray-100 transition-all z-20 cursor-pointer"
+                                        aria-label="Previous image"
+                                    >
+                                        <i className="fas fa-chevron-left text-xs"></i>
+                                    </button>
+                                    <button 
+                                        type="button"
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            setCurrentImageIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+                                        }}
+                                        className="absolute right-2.5 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-700 hover:text-medical-600 w-8 h-8 rounded-full flex items-center justify-center shadow-md border border-gray-101 transition-all z-20 cursor-pointer"
+                                        aria-label="Next image"
+                                    >
+                                        <i className="fas fa-chevron-right text-xs"></i>
+                                    </button>
+                                </>
+                            )}
+                        </div>
+
+                        {/* Gallery Indicators & Zoom Controls Row */}
+                        <div className="relative z-20 flex flex-col items-center gap-3 w-full">
+                            {/* Dots indicator */}
+                            {images.length > 1 && (
+                                <div className="flex gap-1.5 items-center justify-center">
+                                    {images.map((_, idx) => (
+                                        <button
+                                            key={idx}
+                                            type="button"
+                                            onClick={() => setCurrentImageIndex(idx)}
+                                            className={`h-2 rounded-full transition-all duration-300 ${idx === currentImageIndex ? 'w-5 bg-medical-600' : 'w-2 bg-gray-300 hover:bg-gray-400'}`}
+                                            aria-label={`Go to image ${idx + 1}`}
+                                        />
+                                    ))}
+                                </div>
+                            )}
+
+                            {/* Elegant Zoom Toolbar */}
+                            <div className="flex items-center gap-1 bg-white/95 backdrop-blur shadow-md rounded-full px-3 py-1.5 border border-gray-100">
+                                <button 
+                                    type="button"
+                                    onClick={() => setZoomScale(prev => Math.max(prev - 0.25, 1))}
+                                    disabled={zoomScale <= 1}
+                                    className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold transition-colors ${zoomScale <= 1 ? 'text-gray-300 cursor-not-allowed' : 'text-gray-700 hover:bg-gray-100 hover:text-medical-600'}`}
+                                    title="Zoom Out"
+                                >
+                                    <i className="fas fa-minus"></i>
+                                </button>
+                                <span className="text-[10px] font-mono font-bold text-gray-550 px-2 select-none w-10 text-center">
+                                    {Math.round(zoomScale * 100)}%
+                                </span>
+                                <button 
+                                    type="button"
+                                    onClick={() => setZoomScale(prev => Math.min(prev + 0.25, 3))}
+                                    disabled={zoomScale >= 3}
+                                    className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold transition-colors ${zoomScale >= 3 ? 'text-gray-300 cursor-not-allowed' : 'text-gray-700 hover:bg-gray-100 hover:text-medical-600'}`}
+                                    title="Zoom In"
+                                >
+                                    <i className="fas fa-plus"></i>
+                                </button>
+                                {zoomScale > 1 && (
+                                    <button 
+                                        type="button"
+                                        onClick={() => setZoomScale(1)}
+                                        className="w-7 h-7 rounded-full flex items-center justify-center text-xs text-red-500 hover:bg-red-50 transition-colors ml-1 border-l border-gray-100 pl-2 cursor-pointer"
+                                        title="Reset Zoom"
+                                    >
+                                        <i className="fas fa-redo-alt"></i>
+                                    </button>
+                                )}
+                            </div>
                         </div>
 
                         {/* AI Badge - Improved Mobile Positioning */}
                         {isAiResult && (
-                            <div className="relative md:absolute md:bottom-6 md:left-6 z-20 w-auto">
-                                <span className="bg-indigo-600/95 backdrop-blur text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg flex items-center justify-center gap-2 border border-white/20 animate-fade-in-up">
+                            <div className="relative md:absolute md:bottom-4 md:left-4 z-20 w-auto">
+                                <span className="bg-indigo-600/95 backdrop-blur text-white text-[10px] font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center justify-center gap-1.5 border border-white/20">
                                     <i className="fas fa-robot animate-pulse text-indigo-200"></i>
                                     <span>AI Generated Result</span>
                                 </span>
@@ -205,7 +401,7 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                     </div>
 
                     {/* Right: Details Panel */}
-                    <div className="w-full md:w-7/12 bg-white flex flex-col md:h-full md:overflow-hidden">
+                    <div className="w-full md:w-[52%] bg-white flex flex-col md:h-full md:overflow-hidden">
                         
                         {/* Scrollable Content (Desktop Only for internal scroll, Mobile scrolls parent) */}
                         <div id="product-detail-pane" className="flex-1 p-6 sm:p-8 md:p-10 lg:p-12 md:overflow-y-auto custom-scrollbar">
@@ -227,9 +423,14 @@ const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                                     </span>
                                 )}
                                 {product.avgPrice && (
-                                    <span className="px-3 py-1 rounded-full bg-amber-50 text-amber-800 text-[10px] md:text-xs font-black uppercase tracking-wider border border-amber-200 flex items-center gap-1 shadow-sm">
-                                        <i className="fas fa-tag text-[9px] md:text-[11px] text-amber-600"></i> Avg Price: {product.avgPrice}
-                                    </span>
+                                    <>
+                                        <span className="px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-[10px] md:text-xs font-black uppercase tracking-wider border border-emerald-250 flex items-center gap-1 shadow-sm">
+                                            <i className="fas fa-tag text-[9px] md:text-[11px] text-emerald-600 animate-pulse"></i> Sale Price: {getMaxPrice(product.avgPrice)}
+                                        </span>
+                                        <span className="px-3 py-1 rounded-full bg-gray-50 text-gray-550 text-[10px] md:text-xs font-bold uppercase tracking-wider border border-gray-200 flex items-center gap-1 shadow-inner line-through decoration-red-400">
+                                            MRP: ₹{Math.ceil(getMaxPriceVal(product.avgPrice) * 1.15)}
+                                        </span>
+                                    </>
                                 )}
                             </div>
 

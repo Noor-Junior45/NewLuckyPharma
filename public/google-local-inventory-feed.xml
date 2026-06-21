@@ -9,413 +9,420 @@
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>10.00 INR</g:price>
+      <g:price>50.00 INR</g:price>
     </item>
     <item>
       <g:item_id>2</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>50.00 INR</g:price>
+      <g:price>100.00 INR</g:price>
     </item>
     <item>
       <g:item_id>3</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>100.00 INR</g:price>
+      <g:price>200.00 INR</g:price>
     </item>
     <item>
       <g:item_id>4</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>10.00 INR</g:price>
+      <g:price>50.00 INR</g:price>
     </item>
     <item>
       <g:item_id>5</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>10.00 INR</g:price>
+      <g:price>50.00 INR</g:price>
     </item>
     <item>
       <g:item_id>6</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>50.00 INR</g:price>
+      <g:price>200.00 INR</g:price>
     </item>
     <item>
       <g:item_id>7</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>50.00 INR</g:price>
+      <g:price>150.00 INR</g:price>
     </item>
     <item>
       <g:item_id>8</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>50.00 INR</g:price>
+      <g:price>150.00 INR</g:price>
     </item>
     <item>
       <g:item_id>9</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>50.00 INR</g:price>
+      <g:price>150.00 INR</g:price>
     </item>
     <item>
       <g:item_id>10</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>100.00 INR</g:price>
+      <g:price>300.00 INR</g:price>
     </item>
     <item>
       <g:item_id>11</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>50.00 INR</g:price>
+      <g:price>200.00 INR</g:price>
     </item>
     <item>
       <g:item_id>12</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>50.00 INR</g:price>
+      <g:price>150.00 INR</g:price>
     </item>
     <item>
       <g:item_id>13</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>100.00 INR</g:price>
+      <g:price>200.00 INR</g:price>
     </item>
     <item>
       <g:item_id>14</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>100.00 INR</g:price>
+      <g:price>250.00 INR</g:price>
     </item>
     <item>
       <g:item_id>15</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>200.00 INR</g:price>
+      <g:price>1000.00 INR</g:price>
     </item>
     <item>
       <g:item_id>16</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>100.00 INR</g:price>
+      <g:price>500.00 INR</g:price>
     </item>
     <item>
       <g:item_id>17</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>200.00 INR</g:price>
+      <g:price>600.00 INR</g:price>
     </item>
     <item>
       <g:item_id>18</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>300.00 INR</g:price>
+      <g:price>600.00 INR</g:price>
     </item>
     <item>
       <g:item_id>19</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>300.00 INR</g:price>
+      <g:price>600.00 INR</g:price>
     </item>
     <item>
       <g:item_id>20</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>300.00 INR</g:price>
+      <g:price>600.00 INR</g:price>
     </item>
     <item>
       <g:item_id>21</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>100.00 INR</g:price>
+      <g:price>150.00 INR</g:price>
     </item>
     <item>
       <g:item_id>22</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>50.00 INR</g:price>
+      <g:price>150.00 INR</g:price>
     </item>
     <item>
       <g:item_id>23</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>50.00 INR</g:price>
+      <g:price>100.00 INR</g:price>
     </item>
     <item>
       <g:item_id>24</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>20.00 INR</g:price>
+      <g:price>50.00 INR</g:price>
     </item>
     <item>
       <g:item_id>25</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>200.00 INR</g:price>
+      <g:price>1000.00 INR</g:price>
     </item>
     <item>
       <g:item_id>26</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>10.00 INR</g:price>
+      <g:price>50.00 INR</g:price>
     </item>
     <item>
       <g:item_id>27</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>50.00 INR</g:price>
+      <g:price>150.00 INR</g:price>
     </item>
     <item>
       <g:item_id>28</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>10.00 INR</g:price>
+      <g:price>50.00 INR</g:price>
     </item>
     <item>
       <g:item_id>29</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>50.00 INR</g:price>
+      <g:price>600.00 INR</g:price>
     </item>
     <item>
       <g:item_id>30</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>50.00 INR</g:price>
+      <g:price>600.00 INR</g:price>
     </item>
     <item>
       <g:item_id>31</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>10.00 INR</g:price>
+      <g:price>50.00 INR</g:price>
     </item>
     <item>
       <g:item_id>32</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>100.00 INR</g:price>
+      <g:price>300.00 INR</g:price>
     </item>
     <item>
       <g:item_id>33</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>10.00 INR</g:price>
+      <g:price>50.00 INR</g:price>
     </item>
     <item>
       <g:item_id>34</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>50.00 INR</g:price>
+      <g:price>200.00 INR</g:price>
     </item>
     <item>
       <g:item_id>35</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>5.00 INR</g:price>
+      <g:price>20.00 INR</g:price>
     </item>
     <item>
       <g:item_id>36</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>50.00 INR</g:price>
+      <g:price>150.00 INR</g:price>
     </item>
     <item>
       <g:item_id>37</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>50.00 INR</g:price>
+      <g:price>150.00 INR</g:price>
     </item>
     <item>
       <g:item_id>38</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>100.00 INR</g:price>
+      <g:price>300.00 INR</g:price>
     </item>
     <item>
       <g:item_id>39</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>200.00 INR</g:price>
+      <g:price>600.00 INR</g:price>
     </item>
     <item>
       <g:item_id>40</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>400.00 INR</g:price>
+      <g:price>700.00 INR</g:price>
     </item>
     <item>
       <g:item_id>41</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>200.00 INR</g:price>
+      <g:price>600.00 INR</g:price>
     </item>
     <item>
       <g:item_id>42</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>200.00 INR</g:price>
+      <g:price>600.00 INR</g:price>
     </item>
     <item>
       <g:item_id>43</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>300.00 INR</g:price>
+      <g:price>600.00 INR</g:price>
     </item>
     <item>
       <g:item_id>44</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>100.00 INR</g:price>
+      <g:price>350.00 INR</g:price>
     </item>
     <item>
       <g:item_id>45</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>10.00 INR</g:price>
+      <g:price>50.00 INR</g:price>
     </item>
     <item>
       <g:item_id>46</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>50.00 INR</g:price>
+      <g:price>150.00 INR</g:price>
     </item>
     <item>
       <g:item_id>47</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>100.00 INR</g:price>
+      <g:price>250.00 INR</g:price>
     </item>
     <item>
       <g:item_id>48</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>30.00 INR</g:price>
+      <g:price>100.00 INR</g:price>
     </item>
     <item>
       <g:item_id>49</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>10.00 INR</g:price>
+      <g:price>50.00 INR</g:price>
     </item>
     <item>
       <g:item_id>50</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>30.00 INR</g:price>
+      <g:price>100.00 INR</g:price>
     </item>
     <item>
       <g:item_id>51</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>50.00 INR</g:price>
+      <g:price>200.00 INR</g:price>
     </item>
     <item>
       <g:item_id>52</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>100.00 INR</g:price>
+      <g:price>200.00 INR</g:price>
     </item>
     <item>
       <g:item_id>53</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>20.00 INR</g:price>
+      <g:price>100.00 INR</g:price>
     </item>
     <item>
       <g:item_id>54</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>20.00 INR</g:price>
+      <g:price>100.00 INR</g:price>
     </item>
     <item>
       <g:item_id>55</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>100.00 INR</g:price>
+      <g:price>500.00 INR</g:price>
     </item>
     <item>
       <g:item_id>56</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>100.00 INR</g:price>
+      <g:price>500.00 INR</g:price>
     </item>
     <item>
       <g:item_id>57</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>200.00 INR</g:price>
+      <g:price>500.00 INR</g:price>
     </item>
     <item>
       <g:item_id>58</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>100.00 INR</g:price>
+      <g:price>200.00 INR</g:price>
     </item>
     <item>
       <g:item_id>59</g:item_id>
       <g:store_code>103</g:store_code>
       <g:quantity>15</g:quantity>
       <g:availability>in_stock</g:availability>
-      <g:price>200.00 INR</g:price>
+      <g:price>500.00 INR</g:price>
+    </item>
+    <item>
+      <g:item_id>60</g:item_id>
+      <g:store_code>103</g:store_code>
+      <g:quantity>15</g:quantity>
+      <g:availability>in_stock</g:availability>
+      <g:price>400.00 INR</g:price>
     </item>
   </channel>
 </rss>

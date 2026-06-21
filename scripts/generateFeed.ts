@@ -23,14 +23,25 @@ try {
     console.warn('Could not manually parse .env file:', err);
 }
 
-function cleanPrice(priceStr?: string): string {
-    if (!priceStr) return '100.00 INR';
-    // Match the first number in the string (e.g. ₹200 - ₹600 => 200)
-    const match = priceStr.replace(/,/g, '').match(/\d+/);
-    if (match) {
-        return `${match[0]}.00 INR`;
+function getMaxPriceNumber(priceStr?: string): number {
+    if (!priceStr) return 100;
+    const matches = priceStr.replace(/,/g, '').match(/\d+/g);
+    if (matches && matches.length > 0) {
+        return Math.max(...matches.map(Number));
     }
-    return '100.00 INR';
+    return 100;
+}
+
+function cleanPrice(priceStr?: string): string {
+    const maxVal = getMaxPriceNumber(priceStr);
+    // Standard price is MRP, which is usually ~15% higher than our store sale price
+    const mrp = Math.ceil(maxVal * 1.15);
+    return `${mrp}.00 INR`;
+}
+
+function getSalePrice(priceStr?: string): string {
+    const maxVal = getMaxPriceNumber(priceStr);
+    return `${maxVal}.00 INR`;
 }
 
 function getGoogleCategory(category?: string): string {
@@ -96,6 +107,7 @@ function generateRssFeed() {
         // Use placeholder or backup image if none exists
         const imgLink = escapeXml(prod.image || 'https://newluckypharma.vercel.app/images/default-product.jpg');
         const price = cleanPrice(prod.avgPrice);
+        const salePrice = getSalePrice(prod.avgPrice);
         const googleCat = escapeXml(getGoogleCategory(prod.category));
         const availability = 'in_stock';
         const condition = 'new';
@@ -111,6 +123,7 @@ function generateRssFeed() {
       <link>${link}</link>
       <g:image_link>${imgLink}</g:image_link>
       <g:price>${price}</g:price>
+      <g:sale_price>${salePrice}</g:sale_price>
       <g:availability>${availability}</g:availability>
       <g:condition>${condition}</g:condition>
       <g:brand>${brand}</g:brand>
@@ -171,7 +184,7 @@ function generateLocalInventoryFeed() {
 
     for (const prod of productList) {
         const id = prod.id;
-        const price = cleanPrice(prod.avgPrice);
+        const price = getSalePrice(prod.avgPrice);
         
         // Use process.env.GOOGLE_STORE_CODE or fallback to '103' if not defined (matches registered Shop Code in Google Business Profile)
         const storeCode = process.env.GOOGLE_STORE_CODE || '103';

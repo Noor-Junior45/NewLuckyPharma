@@ -50,6 +50,31 @@ const FAQ: React.FC = () => {
             id: "bulk-orders",
             question: "Can I place a bulk order for my clinic?",
             answer: "Yes, we accept bulk orders for clinics and nursing homes. Please contact us directly via phone or WhatsApp to discuss pricing and availability."
+        },
+        {
+            id: "pricing-mrp",
+            question: "Why do product prices fluctuate, and how does it relate to the MRP?",
+            answer: "Pharmaceutical and wellness product prices are subject to frequent shifts per drug batch. The average prices shown on our website catalog are estimated guidelines of recent stock values. The actual billing price of any medicine is strictly determined by the manufacturer's printed Maximum Retail Price (MRP) stamped on the physical pack at the time of procurement, in compliance with government Drug Price Control Order (DPCO) regulations. Consequently, the final price at our retail counter may be slightly higher or lower than the generic website estimates."
+        },
+        {
+            id: "free-items-gifts",
+            question: "What is your policy regarding free items, complementary gifts, or promotional products?",
+            answer: "Any complimentary promotional additions, free companion items, or container gifts (such as a shaker bottle or companion 100g glucose pack provided with specific items) are strictly subject to real-time manufacturing batch availability. These free bonuses are entirely complementary and cannot be traded, bartered, or exchanged for other items under any circumstances. We run a professional licensed pharmaceutical enterprise, not a generic food grocery shop. Customers and trading partners cannot forcefully or emotionally demand exchanges on optional complimentary bonuses, as physical distribution inventory is bound to sterile clinical guidelines."
+        },
+        {
+            id: "manufacturer-gift-availability",
+            question: "What if a company prints 'Free Gift Inside/With This' but it is not supplied, or the gift has expired?",
+            answer: "Sometimes, manufacturing companies print promotional 'free gift' offers directly on their cardboard packaging blocks but fail to package or ship those promotional items to distributors and wholesalers due to stock issues or operational changes at the corporate manufacturing level. In such cases, New Lucky Pharma cannot lower the standard Maximum Retail Price (MRP) of the host product, nor can we offer a secondary substitute gift. Additionally, if packed complimentary gifts have reached or are close to their printed expiration date, we are legally and ethically prohibited from distributing them to safeguard consumer health. Expired promotional gifts will be discarded, and no cash discount or replacement goods will be issued."
+        },
+        {
+            id: "abha-card-registration",
+            question: "What is an ABHA card, and how can I get one generated at New Lucky Pharma?",
+            answer: "An Ayushman Bharat Health Account (ABHA) card is a secure, 14-digit digital identity key issued under the Ayushman Bharat Digital Mission (ABDM) by the National Health Authority (NHA), Government of India. New Lucky Pharma has been officially certified as an authorized Digital Health Facility (HFR Registration ID: IN2010014663, verified on June 04, 2026, licensed under our parent Godda District). If you do not have an ABHA Card, visit our main store in Hanwara with your Aadhaar Card and mobile phone. Our registered agent will generate and activate your primary ABHA digital healthcare card free of charge in just 5 minutes, allowing you to seamlessly share digital prescriptions, test reports, and track wellness history securely across participating clinics and hospitals nationwide."
+        },
+        {
+            id: "sunday-doctor-camp",
+            question: "Do doctors consult at New Lucky Pharma on Sundays? What is the specialty availability?",
+            answer: "Yes, we host complementary Doctor Consultation Camps at our store on Sundays! Depending on the rota and weekly availability of doctors from regional hospitals, we invite registered MBBS doctors, orthopedic/bone specialists, or general OPD practitioners. Please note that the specific specialty and doctor attending on any given Sunday is not permanently fixed and is strictly subject to hospital camp arrangements. We also provide complete contact details and precise location parameters of the doctors' primary hospitals or private clinics, enabling healthcare seekers to proceed there directly for advanced follow-up assessments."
         }
     ];
 

@@ -10,6 +10,19 @@ interface ProductsProps {
     toggleWishlist: (product: Product) => void;
 }
 
+const getMaxPriceVal = (priceStr?: string): number => {
+    if (!priceStr) return 100;
+    const matches = priceStr.replace(/,/g, '').match(/\d+/g);
+    if (matches && matches.length > 0) {
+        return Math.max(...matches.map(Number));
+    }
+    return 100;
+};
+
+const getMaxPrice = (priceStr?: string): string => {
+    return `₹${getMaxPriceVal(priceStr)}`;
+};
+
 const Products: React.FC<ProductsProps> = ({ wishlist, toggleWishlist }) => {
     // State for Data
     const [products, setProducts] = useState<Product[]>([]);
@@ -412,12 +425,12 @@ const Products: React.FC<ProductsProps> = ({ wishlist, toggleWishlist }) => {
                             displayedProducts.map((product, index) => (
                                 <div 
                                     key={product.id} 
-                                    className="hover-lift-smooth glass-card rounded-3xl overflow-hidden flex flex-col h-full group bg-white relative animate-fade-in-up"
+                                    className="hover-lift-smooth glass-card rounded-3xl overflow-hidden flex flex-col h-full group bg-white relative animate-fade-in-up cursor-pointer hover:shadow-xl transition-all duration-300"
+                                    onClick={() => openQuickView(product)}
                                     style={{ animationDelay: `${(index % 8) * 100}ms` }}
                                 >
                                     <div 
-                                        className="h-60 p-8 relative cursor-pointer bg-gradient-to-br from-gray-50 to-white group-hover:from-medical-50/30 transition-colors duration-500 flex items-center justify-center"
-                                        onClick={() => openQuickView(product)}
+                                        className="h-60 p-8 relative bg-gradient-to-br from-gray-50 to-white group-hover:from-medical-50/30 transition-colors duration-500 flex items-center justify-center"
                                     >
                                         <ProductCardImage src={product.image} alt={product.name} />
                                         <div className="absolute top-4 left-4 z-20 flex flex-col gap-2">
@@ -450,13 +463,22 @@ const Products: React.FC<ProductsProps> = ({ wishlist, toggleWishlist }) => {
                                             <div className="flex items-center gap-2 mb-1.5 flex-wrap">
                                                 {product.category && <span className="text-[10px] font-black text-medical-600 uppercase tracking-widest">{product.category}</span>}
                                                 {product.isPrescriptionRequired && <span className="text-[8px] bg-red-50 text-red-500 px-2 py-0.5 rounded-full font-bold uppercase tracking-tighter border border-red-100">Rx Required</span>}
-                                                {product.avgPrice && <span className="text-[10px] font-bold bg-amber-50 text-amber-700 px-2 py-0.5 rounded-full border border-amber-200/50">{product.avgPrice}</span>}
+                                                {product.avgPrice && (
+                                                    <div className="flex items-center gap-1.5 flex-wrap">
+                                                        <span className="text-[10px] font-bold bg-emerald-50 border border-emerald-200 text-emerald-700 px-2 py-0.5 rounded-full" title="Optimized Google Merchant Sale Price">
+                                                            Sale Price: {getMaxPrice(product.avgPrice)}
+                                                        </span>
+                                                        <span className="text-[9px] text-gray-400 line-through">
+                                                            MRP: ₹{Math.ceil(getMaxPriceVal(product.avgPrice) * 1.15)}
+                                                        </span>
+                                                    </div>
+                                                )}
                                             </div>
                                             <h3 className="font-bold text-lg text-gray-900 leading-tight group-hover:text-medical-600 transition-colors">{product.name}</h3>
                                         </div>
                                         <p className="text-sm text-gray-500 mb-5 line-clamp-2 leading-relaxed">{product.description}</p>
                                         <div className="mt-auto pt-4 border-t border-gray-50 flex items-center justify-between">
-                                            <button onClick={() => openQuickView(product)} className="text-xs font-black text-medical-700 hover:underline uppercase tracking-widest">Details <i className="fas fa-arrow-right ml-1"></i></button>
+                                            <button onClick={(e) => { e.stopPropagation(); openQuickView(product); }} className="text-xs font-black text-medical-700 hover:underline uppercase tracking-widest">Details <i className="fas fa-arrow-right ml-1"></i></button>
                                             <button onClick={(e) => askAI(product, e)} className="w-10 h-10 rounded-2xl bg-medical-50 text-medical-600 flex items-center justify-center hover:bg-medical-600 hover:text-white transition-all shadow-inner border border-medical-100 group/ai"><i className="fas fa-robot text-sm group-hover/ai:animate-pulse"></i></button>
                                         </div>
                                     </div>

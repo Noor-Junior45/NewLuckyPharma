@@ -14,6 +14,7 @@ export interface Product {
     name: string;
     description: string;
     image: string;
+    images?: string[];
     delay?: string;
     // Enhanced details
     category?: string;

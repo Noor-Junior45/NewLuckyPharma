@@ -27,6 +27,19 @@ const OrderConfirmationModal: React.FC<OrderConfirmationModalProps> = ({ isOpen,
     const [estimatedDate, setEstimatedDate] = useState('');
     const deliveryCountry = 'IN';
 
+    const getMaxPriceVal = (priceStr?: string): number => {
+        if (!priceStr) return 100;
+        const matches = priceStr.replace(/,/g, '').match(/\d+/g);
+        if (matches && matches.length > 0) {
+            return Math.max(...matches.map(Number));
+        }
+        return 100;
+    };
+
+    const getMaxPrice = (priceStr?: string): string => {
+        return `₹${getMaxPriceVal(priceStr)}`;
+    };
+
     useEffect(() => {
         if (isOpen) {
             setStep('form');
@@ -47,7 +60,9 @@ const OrderConfirmationModal: React.FC<OrderConfirmationModalProps> = ({ isOpen,
 
     const getWhatsAppLink = () => {
         const phoneNumber = "919798881368";
-        const message = `Hello New Lucky Pharma,\n\nI want to place an order/check availability for:\n*Medicine:* ${product.name}\n*Price:* ${product.avgPrice || 'Contact counter'}\n*My Email:* ${email || 'Not provided'}\n*My Order Ref:* ${orderId}`;
+        const salePrice = getMaxPrice(product.avgPrice);
+        const mrp = `₹${Math.ceil(getMaxPriceVal(product.avgPrice) * 1.15)}`;
+        const message = `Hello New Lucky Pharma,\n\nI want to place an order/check availability for:\n*Medicine:* ${product.name}\n*Our Sale Price:* ${salePrice}\n*MRP:* ${mrp}\n*My Email:* ${email || 'Not provided'}\n*My Order Ref:* ${orderId}`;
         return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     };
 
@@ -130,7 +145,10 @@ const OrderConfirmationModal: React.FC<OrderConfirmationModalProps> = ({ isOpen,
                                 <div className="flex gap-2 items-center mt-1">
                                     <span className="text-[10px] sm:text-xs text-gray-500 font-medium truncate">{product.category}</span>
                                     {product.avgPrice && (
-                                        <span className="text-[10px] sm:text-xs text-medical-600 font-bold bg-medical-50/80 px-2 py-0.5 rounded-full border border-medical-100">{product.avgPrice}</span>
+                                        <div className="flex items-center gap-1.5 flex-wrap">
+                                            <span className="text-[10px] text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100">Sale Price: {getMaxPrice(product.avgPrice)}</span>
+                                            <span className="text-[10px] text-gray-400 line-through">MRP: ₹{Math.ceil(getMaxPriceVal(product.avgPrice) * 1.15)}</span>
+                                        </div>
                                     )}
                                 </div>
                             </div>

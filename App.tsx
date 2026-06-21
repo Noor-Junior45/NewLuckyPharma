@@ -76,8 +76,12 @@ const App: React.FC = () => {
       
       const parsePrice = (priceStr?: string): string => {
         if (!priceStr) return '100.00';
-        const match = priceStr.replace(/,/g, '').match(/\d+/);
-        return match ? `${match[0]}.00` : '100.00';
+        const matches = priceStr.replace(/,/g, '').match(/\d+/g);
+        if (matches && matches.length > 0) {
+          const maxVal = Math.max(...matches.map(Number));
+          return `${maxVal}.00`;
+        }
+        return '100.00';
       };
 
       const storeCode = process.env.GOOGLE_STORE_CODE || '103';

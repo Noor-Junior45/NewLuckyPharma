@@ -419,7 +419,7 @@ export const productList: Product[] = [
     },
     { 
         id: 33, 
-        name: 'INJECTINS & SYRINGES', 
+        name: 'INJECTION & SYRINGES', 
         description: 'Premium quality, sterile disposable medical syringes featuring sharp lubricated needles. Intended for accurate administering of prescription fluids and clinical diagnostics.', 
         image: 'https://i.imgur.com/GqZ4YYV.jpeg',
         category: 'Medical Supplies',
@@ -766,6 +766,20 @@ export const productList: Product[] = [
         usage: 'Take 1 to 2 teaspoons daily with warm milk or on an empty stomach.',
         sideEffects: 'Generates great organic metabolic heat. Completely clean.',
         precautions: ['Diabetics should prefer the Sugar-free Chyawanprash variant.', 'Close the lid tightly.'],
+        isPrescriptionRequired: false
+    },
+    { 
+        id: 60, 
+        name: 'KETOKEM SHAMPOO', 
+        description: 'Ketokem Shampoo is a highly effective, premium medicated anti-dandruff formulation for the treatment of severe dandruff, flaking, scaling, itchy scalp, and seborrheic dermatitis. Formulated to target fungal cells directly, it provides long-lasting relief from scalp irritation while leaving hair soft and clean.', 
+        image: 'https://i.imgur.com/9PKXDiX.jpeg',
+        images: ['https://i.imgur.com/9PKXDiX.jpeg', 'https://i.imgur.com/cQYhTdC.png'],
+        category: 'Personal Care',
+        composition: 'Ketoconazole IP 2.0% w/v, Ketoconazole IP & Coal Tar topical solution base',
+        avgPrice: '₹245 - ₹400',
+        usage: 'Wet hair and scalp thoroughly. Apply a small amount to produce enough lather, massage and leave on for 3 to 5 minutes before rinsing off completely.',
+        sideEffects: 'Hair dryness, mild skin irritation, or burning sensation in rare cases.',
+        precautions: ['Avoid contact with eyes. In case of accidental contact, rinse eyes thoroughly with water.', 'Discontinue use if severe irritation develops.'],
         isPrescriptionRequired: false
     }
 ];
