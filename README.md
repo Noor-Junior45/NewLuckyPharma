@@ -117,3 +117,8 @@ New Lucky Pharma is located on Main Road, Hanwara, Godda, Jharkhand (814154), op
 ## 📄 License
 
 This project currently has no explicit open-source license. All rights reserved unless stated otherwise.
+
+--- 
+
+**Built by [Noor-Junior45]**(https://github.com/Noor-Junior45)
+
