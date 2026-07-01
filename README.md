@@ -12,10 +12,13 @@
 ​
 Built for performance and reliability using modern web technologies:
 ​
+
 **Framework:** React
 ​
+
 **Build Tool:** Vite
 ​
+
 **Integrations:** Google Customer Reviews & GTIN support
 ​
 ## Live Demo
