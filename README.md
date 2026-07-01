@@ -120,5 +120,5 @@ This project currently has no explicit open-source license. All rights reserved 
 
 --- 
 
-**Built by [Noor-Junior45]**(https://github.com/Noor-Junior45)
+**Built by [Noor-Junior45](https://github.com/Noor-Junior45)**
 
