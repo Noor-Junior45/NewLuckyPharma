@@ -4,10 +4,15 @@
 ​
 ## Features
 
-​Trusted Healthcare: Highlighting our commitment to health as a top priority for the Hanwara community.
-​Service Accessibility: Information on our 7-day-a-week operation, professional advice, and genuine medicine procurement.
-​User Engagement: Integrated contact options, store directions, and resources for health checkups.
+**​Trusted Healthcare:** Highlighting our commitment to health as a top priority for the Hanwara community.
+
+
+**​Service Accessibility:** Information on our 7-day-a-week operation, professional advice, and genuine medicine procurement.
+
+
+**​User Engagement:** Integrated contact options, store directions, and resources for health checkups.
 ​
+
 ## Tech Stack
 ​
 Built for performance and reliability using modern web technologies:
