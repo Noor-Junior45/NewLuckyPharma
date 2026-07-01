@@ -12,14 +12,14 @@
 ​
 Built for performance and reliability using modern web technologies:
 ​
-## Framework: React
+**Framework:** React
 ​
-## Build Tool: Vite
+**Build Tool:** Vite
 ​
-## Integrations: Google Customer Reviews & GTIN support
+**Integrations:** Google Customer Reviews & GTIN support
 ​
 ## Live Demo
-​Visit the store here: [https://newluckypharma.vercel.app]
+​Visit the store here: https://newluckypharma.vercel.app
 
 ## To Run Locally this Project
 
